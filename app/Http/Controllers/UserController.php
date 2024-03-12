@@ -15,11 +15,11 @@ class UserController extends Controller
         $no=0;
         $no++;
         $Users=user::all();
-        return View('User.Index',["title"=>"Home",'active'=>'Home'],compact('Users'));
+        return View('User.Index',["title"=>"User","active"=>"Home"],compact('Users','no'));
     }
 
     public function Register(){
-        return View('User.Register');
+        return View('User.Register',["title"=>"User","active"=>"Home"]);
     }
 
     public function store(request $request){
@@ -51,7 +51,7 @@ public function edit(string $id):View
 {
     //get member by id
     $user=user::findOrFail($id);
-    return view('User.Edit',["title"=>"Edit",'active'=>'User'], compact('user'));
+    return view('User.Edit',["title"=>"User","active"=>"User"], compact('user'));
 
 }
 
@@ -97,7 +97,7 @@ public function destroy($id): RedirectResponse
         $user->delete();
 
         //redirect to index
-        return redirect()->route('users.index',["title"=>"User",'active'=>'User'])->with(['success'=>'data telah berhasil di delete!']);
+        return redirect()->route('users.index',["title"=>"User","active"=>"User"])->with(['success'=>'data telah berhasil di delete!']);
     }
 
 }

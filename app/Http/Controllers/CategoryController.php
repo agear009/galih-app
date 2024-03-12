@@ -14,10 +14,11 @@ class CategoryController extends Controller
      */
 
     public function index(){
+
         $no=0;
         $no++;
         $Category=category::all();
-        return view('Category.Index',["title"=>"Home","active"=>"Home"],compact('Category','no'));
+        return view('Category.Index',["title"=>"Category","active"=>"Home"],compact('Category','no'));
     }
 
     /**
@@ -54,7 +55,7 @@ class CategoryController extends Controller
     public function edit(string $id)
     {
         $category=category::findOrFail($id);
-        return view('Category.Edit',["title"=>"Edit","active"=>"Edit"],compact('category'));
+        return view('Category.Edit',["title"=>"Category","active"=>"Edit"],compact('category'));
     }
 
     /**
@@ -97,6 +98,6 @@ class CategoryController extends Controller
         $category->delete();
 
         //redirect to index
-        return redirect()->route('category.index',["title"=>"User",'active'=>'User'])->with(['success'=>'data telah berhasil di delete!']);
+        return redirect()->route('category.index',["title"=>"Category",'active'=>'User'])->with(['success'=>'data telah berhasil di delete!']);
     }
 }

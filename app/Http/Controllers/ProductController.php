@@ -20,7 +20,7 @@ class ProductController extends Controller
         $no=0;
         $no++;
         $Product=product::all();
-        return View('Product.Index',["title"=>"Home",'active'=>'Product'],compact('Product','no'));
+        return View('Product.Index',["title"=>"Product","active"=>"Product"],compact('Product','no'));
     }
 
     /**
@@ -29,7 +29,7 @@ class ProductController extends Controller
     public function create()
     {
         $Category=category::all();
-        return view('Product.Create',["title"=>"Home",'active'=>'Product'],compact('Category'));
+        return view('Product.Create',["title"=>"Product","active"=>"Product"],compact('Category'));
     }
 
     /**
@@ -41,31 +41,80 @@ class ProductController extends Controller
         $no++;
         //dd($request);
         $this->validate($request,[
-            'id_category'=>'required|max:255',
+            'category_id'=>'required|max:255',
             'produsen'=>'required|max:255',
             'image'=>'required|image|mimes:jpeg,jpg,png|max:2048',
             'name'=>'required|min:2|max:255',
             'size'=>'required|max:255',
             'stock'=>'max:255',
             'price'=>'max:255',
-            'description'=>'required'
+            'description'=>'required',
+            'phone1'=>'required'
 
         ]);
+        if($request->gambar_testimoni=='' AND $request->image_video=='')
+        {
+            $image=$request->file('image');
+            $image->storeAs('public/products', $image->hashName());
 
+            $image_video="belum ada gambar";
+            $gambar_testimoni="belum ada gambar";
+            $phone2='null';
+            $phone3='null';
+            $phone4='null';
+            $phone5='null';
+
+            product::create([
+                'image'=>$image->hashName(),
+                'category_id'=>$request->category_id,
+                'produsen'=>$request->produsen,
+                'name'=>$request->name,
+                'size'=>$request->size,
+                'stock'=>$request->stock,
+                'price'=>$request->price,
+                'description'=>$request->description,
+                'headline'=>$request->headline,
+                'image_video'=>$image_video,
+                'masalah'=>$request->masalah,
+                'solusi'=>$request->solusi,
+                'manfaat'=>$request->manfaat,
+                'gambar_testimoni'=>$gambar_testimoni,
+                'bonus'=>$request->bonus,
+                'kontak'=>$request->kontak,
+                'kelangkaan'=>$request->kelangkaan,
+                'kerugian'=>$request->kerugian,
+                'phone1'=>$request->phone1,
+                'phone2'=>$phone2,
+                'phone3'=>$phone3,
+                'phone4'=>$phone4,
+                'phone5'=>$phone5
+
+
+                   ]);
+            //redirect to index
+            return redirect()->route('products.index')->with(['success'=>'data success ditambahkan!']);
+
+
+        }
+        else{
+            $phone2='null';
+            $phone3='null';
+            $phone4='null';
+            $phone5='null';
           //upload image3
           $image=$request->file('image');
           $image-> storeAs('public/products', $image->hashName());
 
-          $gambartestimoni=$request->file('gambartestimoni');
-          $gambartestimoni-> storeAs('public/products', $gambartestimoni->hashName());
+          $gambar_testimoni=$request->file('gambar_testimoni');
+          $gambar_testimoni-> storeAs('public/testimonials', $gambar_testimoni->hashName());
 
-          $imagevideo=$request->file('imagevideo');
-          $imagevideo-> storeAs('public/products', $imagevideo->hashName());
+          $image_video=$request->file('image_video');
+          $image_video-> storeAs('public/Contents', $image_video->hashName());
 
           //create product
           product::create([
               'image'=>$image->hashName(),
-              'id_category'=>$request->id_category,
+              'category_id'=>$request->category_id,
               'produsen'=>$request->produsen,
               'name'=>$request->name,
               'size'=>$request->size,
@@ -73,27 +122,35 @@ class ProductController extends Controller
               'price'=>$request->price,
               'description'=>$request->description,
               'headline'=>$request->headline,
-              'imagevideo'=>$imagevideo->hashName(),
+              'image_video'=>$image_video->hashName(),
               'masalah'=>$request->masalah,
               'solusi'=>$request->solusi,
               'manfaat'=>$request->manfaat,
-              'gambartestimoni'=>$gambartestimoni->hashName(),
+              'gambar_testimoni'=>$gambar_testimoni->hashName(),
               'bonus'=>$request->bonus,
               'kontak'=>$request->kontak,
               'kelangkaan'=>$request->kelangkaan,
-              'kerugian'=>$request->kerugian
+              'kerugian'=>$request->kerugian,
+              'phone1'=>$request->phone1,
+              'phone2'=>$phone2,
+              'phone3'=>$phone3,
+              'phone4'=>$phone4,
+              'phone5'=>$phone5
 
                  ]);
           //redirect to index
-          return Redirect('products.index',["title"=>"product",'active'=>'Product'])->with(['success'=>'data success ditambahkan!']);
+          return redirect()->route('products.index')->with(['success'=>'data success ditambahkan!']);
+
+        }
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Product $product)
+    public function show($id)
     {
-        //
+        $Product=product::findOrFail($id);
+        return view('Product.Show',["title"=>"Product","active"=>"Product"],compact('Product'));
     }
 
     /**
@@ -103,7 +160,7 @@ class ProductController extends Controller
     {
         $Product=product::findORfail($id);
         $Category=category::all();
-        return view('Product.Edit',["title"=>"product",'active'=>'Product'],compact('Product','Category'));
+        return view('Product.Edit',["title"=>"Product","active"=>"Product"],compact('Product','Category'));
     }
 
     /**
@@ -116,7 +173,7 @@ class ProductController extends Controller
         //dd($request);
         $this->validate($request,[
 
-            'id_category'=>'required|max:255',
+            'category_id'=>'required|max:255',
             'produsen'=>'required|max:255',
             'name'=>'required|max:255',
             'image'=>'image|mimes:jpeg,jpg,png|max:2048',
@@ -125,15 +182,16 @@ class ProductController extends Controller
             'price'=>'required|max:255',
             'description'=>'required',
             'headline'=>'required|max:255',
-            'imagevideo'=>'image|mimes:jpeg,jpg,png|max:2048',
+            'image_video'=>'image|mimes:jpeg,jpg,png|max:2048',
             'masalah'=>'required',
             'solusi'=>'required',
             'manfaat'=>'required',
-            'gambartestimoni'=>'image|mimes:jpeg,jpg,png|max:2048',
+            'gambar_testimoni'=>'image|mimes:jpeg,jpg,png|max:2048',
             'bonus'=>'required',
             'kontak'=>'required',
             'kelangkaan'=>'required',
-            'kerugian'=>'required'
+            'kerugian'=>'required',
+            'phone1'=>'required'
 
         ]);
         $product=product::FindOrFail($id);
@@ -152,7 +210,7 @@ class ProductController extends Controller
             //update product with new image
             $product->update([
               'image'=>$image->hashName(),
-              'id_category'=>$request->id_category,
+              'category_id'=>$request->category_id,
               'produsen'=>$request->produsen,
               'name'=>$request->name,
               'size'=>$request->size,
@@ -166,24 +224,29 @@ class ProductController extends Controller
               'bonus'=>$request->bonus,
               'kontak'=>$request->kontak,
               'kelangkaan'=>$request->kelangkaan,
-              'kerugian'=>$request->kerugian
+              'kerugian'=>$request->kerugian,
+              'phone1'=>$request->phone1,
+              'phone2'=>$request->phone2,
+              'phone3'=>$request->phone3,
+              'phone4'=>$request->phone4,
+              'phone5'=>$request->phone5
             ]);
 
         }
-        elseif($request->hasFile('imagevideo'))
+        elseif($request->hasFile('image_video'))
             {
                 //upload new image
-                $imagevideo=$request->file('imagevideo');
+                $image_video=$request->file('image_video');
 
-                $imagevideo->storeAs('public/products',$imagevideo->hashName());
+                $image_video->storeAs('public/contents',$image_video->hashName());
 
 
                 //delete old image
-                Storage::delete('public/products/'.$product->imagevideo);
+                Storage::delete('public/products/'.$product->image_video);
 
                 //update product with new image
                 $product->update([
-                'id_category'=>$request->id_category,
+                'category_id'=>$request->category_id,
                 'produsen'=>$request->produsen,
                 'name'=>$request->name,
                 'size'=>$request->size,
@@ -191,31 +254,36 @@ class ProductController extends Controller
                 'price'=>$request->price,
                 'description'=>$request->description,
                 'headline'=>$request->headline,
-                'imagevideo'=>$imagevideo->hashName(),
+                'image_video'=>$image_video->hashName(),
                 'masalah'=>$request->masalah,
                 'solusi'=>$request->solusi,
                 'manfaat'=>$request->manfaat,
                 'bonus'=>$request->bonus,
                 'kontak'=>$request->kontak,
                 'kelangkaan'=>$request->kelangkaan,
-                'kerugian'=>$request->kerugian
+                'kerugian'=>$request->kerugian,
+                'phone1'=>$request->phone1,
+                'phone2'=>$request->phone2,
+                'phone3'=>$request->phone3,
+                'phone4'=>$request->phone4,
+                'phone5'=>$request->phone5
                 ]);
 
             }
-        elseif($request->hasFile('gambartestimoni'))
+        elseif($request->hasFile('gambar_testimoni'))
             {
                 //upload new image
-                $gambartestimoni=$request->file('gambartestimoni');
+                $gambar_testimoni=$request->file('gambar_testimoni');
 
-                $gambartestimoni->storeAs('public/products',$gambartestimoni->hashName());
+                $gambar_testimoni->storeAs('public/testimonials',$gambar_testimoni->hashName());
 
 
                 //delete old image
-                Storage::delete('public/products/'.$product->gambartestimoni);
+                Storage::delete('public/products/'.$product->gambar_testimoni);
 
                 //update product with new image
                 $product->update([
-                'id_category'=>$request->id_category,
+                'category_id'=>$request->category_id,
                 'produsen'=>$request->produsen,
                 'name'=>$request->name,
                 'size'=>$request->size,
@@ -226,18 +294,23 @@ class ProductController extends Controller
                 'masalah'=>$request->masalah,
                 'solusi'=>$request->solusi,
                 'manfaat'=>$request->manfaat,
-                'gambartestimoni'=>$gambartestimoni->hashName(),
+                'gambar_testimoni'=>$gambar_testimoni->hashName(),
                 'bonus'=>$request->bonus,
                 'kontak'=>$request->kontak,
                 'kelangkaan'=>$request->kelangkaan,
-                'kerugian'=>$request->kerugian
+                'kerugian'=>$request->kerugian,
+                'phone1'=>$request->phone1,
+                'phone2'=>$request->phone2,
+                'phone3'=>$request->phone3,
+                'phone4'=>$request->phone4,
+                'phone5'=>$request->phone5
                 ]);
 
             }
         else
         {
             $product->update([
-                'id_category'=>$request->id_category,
+                'category_id'=>$request->category_id,
                 'produsen'=>$request->produsen,
                 'name'=>$request->name,
                 'size'=>$request->size,
@@ -251,11 +324,16 @@ class ProductController extends Controller
                 'bonus'=>$request->bonus,
                 'kontak'=>$request->kontak,
                 'kelangkaan'=>$request->kelangkaan,
-                'kerugian'=>$request->kerugian
+                'kerugian'=>$request->kerugian,
+                'phone1'=>$request->phone1,
+                'phone2'=>$request->phone2,
+                'phone3'=>$request->phone3,
+                'phone4'=>$request->phone4,
+                'phone5'=>$request->phone5
             ]);
 
         }
-        return redirect('products.index',["title"=>"product"])->with(['success'=>'data berhasil diubah!']);
+        return redirect()->route('products.index')->with(['success'=>'data berhasil diubah!']);
     }
 
     /**
@@ -268,13 +346,13 @@ class ProductController extends Controller
         //delete image
 
         Storage::delete('public/products/'. $product->image);
-        Storage::delete('public/products/'. $product->imagevideo);
-        Storage::delete('public/products/'. $product->gambartestimoni);
+        Storage::delete('public/contents/'. $product->image_video);
+        Storage::delete('public/testimonials/'. $product->gambar_testimoni);
 
         // delete product
         $product->delete();
 
         //redirect to index
-        return redirect('products.index',["title"=>"product"])->with(['success'=>'data telah berhasil di delete!']);
+        return redirect()->route('products.index')->with(['success'=>'data telah berhasil di delete!']);
     }
 }

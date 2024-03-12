@@ -9,12 +9,12 @@
 
             <div class="mb-3">
             <label for="exampleInputname1" class="form-label">Category</label>
-            <select class="form-control" id="name" name="id_category" aria-describedby="id_category" required value="{{ old('id_category') }}">
-            <option name="id_category" value="{{ $Product->id_category }}">{{ $Product->id_category }}</option>
+            <select class="form-control" id="name" name="category_id" aria-describedby="category_id" required value="{{ old('category_id') }}">
+            <option name="category_id" value="{{ $Product->category_id }}">{{ $Product->category_id }}</option>
             @forelse($Category as $category)
-            <option name="id_category" value="{{ $category->name }}">{{ $category->id}} {{ $category->name }}</option>
+            <option name="category_id" value="{{ $category->name }}">{{ $category->id}} {{ $category->name }}</option>
             @empty
-            <option name="id_category" value="">NO data</option>
+            <option name="category_id" value="">NO data</option>
             @endforelse
            </select>
             </div>
@@ -68,8 +68,8 @@
             </div>
             <div class="mb-3">
                 <label for="exampleInputname1" class="form-label">Image OR Video</label>
-                <img src="{{ asset('storage/products/'.$Product->image) }}">
-                <input type="file" class="form-control" name="imagevideo" value="{{ old('imagevideo') }}">
+                <img src="{{ asset('storage/Contents/'.$Product->image_video) }}">
+                <input type="file" class="form-control" name="image_video" value="{{ old('image_video') }}">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputname1" class="form-label">Problem</label>
@@ -85,8 +85,8 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputname1" class="form-label">Image Testimoni</label>
-                    <img src="{{ asset('storage/products/'.$Product->image) }}">
-                    <input type="file" class="form-control" name="gambartestimoni" value="{{ old('gambartestimoni') }}">
+                    <img src="{{ asset('storage/Testimonials/'.$Product->gambar_testimoni) }}">
+                    <input type="file" class="form-control" name="gambar_testimoni" value="{{ old('gambar_testimoni') }}">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputname1" class="form-label">Bonus</label>
@@ -105,6 +105,30 @@
                         <label for="exampleInputname1" class="form-label">scarcity (kerugian)</label>
                         <textarea id="myTextarea" name="kerugian">{{ $Product->kerugian }}</textarea>
                     </div>
+                    <div class="mb-3">
+                        <label for="exampleInputname1" class="form-label">Contact 1</label>
+                        <input type="text" class="form-control" name="phone1" value="{{ $Product->phone1 }}" required>
+                        </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputname1" class="form-label">Contact 2</label>
+                        <input type="text" class="form-control" name="phone2" value="{{ $Product->phone2 }}" >
+                        </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputname1" class="form-label">Contact 3</label>
+                        <input type="text" class="form-control" name="phone3" value="{{ $Product->phone3 }}" >
+                        </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputname1" class="form-label">Contact 4</label>
+                        <input type="text" class="form-control" name="phone4" value="{{ $Product->phone4 }}" >
+                        </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputname1" class="form-label">Contact 5</label>
+                        <input type="text" class="form-control" name="phone5" value="{{ $Product->phone5 }}" >
+                        </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

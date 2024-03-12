@@ -12,18 +12,18 @@ class IndexController extends Controller
     }
 
     public function Profile(){
-        return view('Index.Profile',["title"=>"Home","active"=>"Profile"]);
+        return view('Index.Profile',["title"=>"Proffile","active"=>"Profile"]);
     }
 
     Public function Product(){
-        return view('Product.Product',["title"=>"Home","active"=>"Product"]);
+        return view('Product.Product',["title"=>"Product","active"=>"Product"]);
     }
 
     Public function Produk(){
-        return view('Product.Produk',["title"=>"Home","active"=>"Produk"]);
+        return view('Product.Produk',["title"=>"Produk","active"=>"Produk"]);
     }
 
     public function Admin(){
-        return view('Admin.Index',["title"=>"Home","active"=>"Home"]);
+        return view('Admin.Index',["title"=>"Admin","active"=>"Home"]);
     }
 }

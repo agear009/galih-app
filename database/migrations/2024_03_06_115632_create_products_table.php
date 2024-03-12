@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('id_category');
+            $table->string('category_id');
             $table->string('produsen');
             $table->string('image');
             $table->string('name');
@@ -22,15 +22,20 @@ return new class extends Migration
             $table->string('price');
             $table->text('description');
             $table->string('headline');
-            $table->string('imagevideo');
+            $table->string('image_video');
             $table->text('masalah');
             $table->text('solusi');
             $table->text('manfaat');
-            $table->string('gambartestimoni');
+            $table->string('gambar_testimoni');
             $table->text('bonus');
             $table->text('kontak');
             $table->text('kelangkaan');
             $table->text('kerugian');
+            $table->string('phone1');
+            $table->string('phone2');
+            $table->string('phone3');
+            $table->string('phone4');
+            $table->string('phone5');
             $table->timestamps();
         });
     }

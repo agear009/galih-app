@@ -8,12 +8,12 @@
 
             <div class="mb-3">
             <label for="exampleInputname1" class="form-label">Category</label>
-            <select class="form-control" id="name" name="id_category" aria-describedby="id_category" required value="{{ old('id_category') }}">
-            <option name="id_category" value="">Select Category</option>
+            <select class="form-control" id="name" name="category_id" aria-describedby="category_id" required value="{{ old('category_id') }}">
+            <option name="category_id" value="">Select Category</option>
             @forelse($Category as $category)
-            <option name="id_category" value="{{ $category->name }}">{{ $category->id}} {{ $category->name }}</option>
+            <option name="category_id" value="{{ $category->name }}">{{ $category->id}} {{ $category->name }}</option>
             @empty
-            <option name="id_category" value="">NO data</option>
+            <option name="category_id" value="">NO data</option>
             @endforelse
            </select>
             </div>
@@ -30,7 +30,7 @@
             </div>
             <div class="mb-3">
             <label for="exampleInputname1" class="form-label">Image</label>
-            <input type="file" class="form-control" id="image" name="image" aria-describedby="image" required value="{{ old('image') }}">
+            <input type="file" class="form-control bg-blue" id="image" name="image" aria-describedby="image" required value="{{ old('image') }}" autofocus>
             </div>
             <div class="mb-3">
                 <label for="exampleInputname1" class="form-label">Name</label>
@@ -65,7 +65,7 @@
             </div>
             <div class="mb-3">
                 <label for="exampleInputname1" class="form-label">Image OR Video</label>
-                <input type="file" class="form-control" name="imagevideo" value="{{ old('imagevideo') }}">
+                <input type="file" class="form-control" name="image_video" value="{{ old('image_video') }}" required>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputname1" class="form-label">Problem</label>
@@ -81,7 +81,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputname1" class="form-label">Image Testimoni</label>
-                    <input type="file" class="form-control" name="gambartestimoni" value="{{ old('gambartestimoni') }}">
+                    <input type="file" class="form-control" name="gambar_testimoni" value="{{ old('gambar_testimoni') }}" required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputname1" class="form-label">Bonus</label>
@@ -100,6 +100,32 @@
                         <label for="exampleInputname1" class="form-label">scarcity (kerugian)</label>
                         <textarea id="myTextarea" name="kerugian"></textarea>
                     </div>
+                    <div class="mb-3">
+                        <label for="exampleInputname1" class="form-label">Contact 1</label>
+                        <input type="text" class="form-control" name="phone1" value="{{ old('phone1') }}" required>
+                        </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputname1" class="form-label">Contact 2</label>
+                        <input type="text" class="form-control" name="phone2" value="{{ old('phone1') }}" >
+                        </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputname1" class="form-label">Contact 1</label>
+                        <input type="text" class="form-control" name="phone3" value="{{ old('phone1') }}" >
+                        </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputname1" class="form-label">Contact 1</label>
+                        <input type="text" class="form-control" name="phone4" value="{{ old('phone1') }}" >
+                        </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputname1" class="form-label">Contact 1</label>
+                        <input type="text" class="form-control" name="phone5" value="{{ old('phone1') }}" >
+                    </div>
+
+
 
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

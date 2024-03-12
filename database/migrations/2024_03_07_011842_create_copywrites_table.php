@@ -14,13 +14,11 @@ return new class extends Migration
         Schema::create('copywrites', function (Blueprint $table) {
             $table->id();
             $table->string('headline');
-            $table->string('imagevideo');
             $table->text('masalah');
             $table->text('solusi');
             $table->text('manfaat');
-            $table->string('gambartestimoni');
-            $table->string('bonus');
-            $table->string('kontak');
+            $table->text('bonus');
+            $table->text('kontak');
             $table->text('kelangkaan');
             $table->text('kerugian');
             $table->timestamps();

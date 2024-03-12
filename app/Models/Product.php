@@ -10,7 +10,7 @@ class Product extends Model
     use HasFactory;
     protected $fillable = [
 
-        'id_category',
+        'category_id',
         'produsen',
         'image',
         'name',
@@ -19,15 +19,21 @@ class Product extends Model
         'price',
         'description',
         'headline',
-        'imagevideo',
+        'image_video',
         'masalah',
         'solusi',
         'manfaat',
-        'gambartestimoni',
+        'gambar_testimoni',
         'bonus',
         'kontak',
         'kelangkaan',
-        'kerugian'
+        'kerugian',
+        'phone1',
+        'phone2',
+        'phone3',
+        'phone4',
+        'phone5',
+
 
     ];
 

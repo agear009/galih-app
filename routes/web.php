@@ -4,27 +4,47 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LandingController;
+use App\Http\Controllers\CopywriteController;
+use App\Http\Controllers\ContentController;
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
+| Here is where you can register web Routes for your application. These
+| Routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
 */
 
-Route::get('/',[IndexController::class,'Index']);
-Route::get('/profile',[IndexController::class,'Profile']);
-route::get('/product',[IndexController::class,'Product']);
-route::get('/produk',[IndexController::class,'Produk']);
-route::get('/admin',[IndexController::class,'Admin']);
-route::get('/user',[UserController::class,'Index']);
-route::get('/categoryindex',[CategoryController::class,'Index']);
-route::get('/register',[UserController::class,'Register']);
-route::resource('/users',\App\Http\Controllers\UserController::class);
-route::resource('/category',\App\Http\Controllers\CategoryController::class);
-route::resource('/products',\App\Http\Controllers\ProductController::class);
+Route::get('/',[IndexController::class,'index']);
+Route::get('/profile',[IndexController::class,'profile']);
+Route::get('/product',[IndexController::class,'product']);
+Route::get('/produk',[IndexController::class,'produk']);
+Route::get('/admin',[IndexController::class,'admin']);
+Route::get('/user',[UserController::class,'index']);
+Route::get('/categoryindex',[CategoryController::class,'index']);
+Route::get('/register',[UserController::class,'register']);
+Route::get('/login',[LoginController::class,'index']);
+Route::post('login-check', [LoginController::class, 'authenticate']);
+Route::resource('/members',\App\Http\Controllers\MemberController::class);
+Route::resource('/promotions',\App\Http\Controllers\LandingController::class);
+
+
+
+
+
+Route::resource('/users',\App\Http\Controllers\UserController::class);
+Route::resource('/category',\App\Http\Controllers\CategoryController::class);
+Route::resource('/products',\App\Http\Controllers\ProductController::class);
+Route::resource('/copy-writes',\App\Http\Controllers\CopywriteController::class);
+Route::resource('/contents',\App\Http\Controllers\ContentController::class);
+Route::resource('/testimonials',\App\Http\Controllers\testimonialController::class);
+Route::resource('/inject',\App\Http\Controllers\CopyWriteExtraController::class);
+Route::resource('/searchs',\App\Http\Controllers\SearchController::class);
+Route::resource('/banners',\App\Http\Controllers\BannerController::class);
+
 

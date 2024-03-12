@@ -38,18 +38,49 @@
                         <li><a class="dropdown-item" href="{{ route('category.index') }}" {{ ($active==="Categoryproduct")?'active':'' }}>Category Product</a></li>
                         <li><a class="dropdown-item" href="{{ route('products.index') }}" {{ ($active==="Product")?'active':'' }}>Product</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#" {{ ($active==="Copywrite")?'active':'' }}>CopyWrite Product</a></li>
-                        <li><a class="dropdown-item" href="#" {{ ($active==="Copywriteimage")?'active':'' }}>CopyWrite Image</a></li>
+                        <li><a class="dropdown-item" href="{{ route('copy-writes.index') }}" {{ ($active==="Copywrite")?'active':'' }}>CopyWrite Product</a></li>
+                        <li><a class="dropdown-item" href="{{ route('contents.index') }}" {{ ($active==="Copywriteimage")?'active':'' }}>CopyWrite Content</a></li>
+                        <li><a class="dropdown-item" href="{{ route('testimonials.index') }}" {{ ($active==="Copywriteimage")?'active':'' }}>Image Testimonial</a></li>
+                        <li><a class="dropdown-item" href="{{ route('banners.index') }}" {{ ($active==="Copywriteimage")?'active':'' }}>Image Banner</a></li>
                     </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#" {{ ($active==="Customer")?'active':'' }}>Customer</a>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                @if($title==="Testimonial")
+                    <form class="d-flex" role="search" action="/searchs" method="get">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Testimoni</button>
+                    </form>
+
+                @elseif($title==="Content")
+                      <form class="d-flex" role="search" action="/searchs" method="get">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                @elseif($title==="CopyWrite")
+                      <form class="d-flex" role="search" action="/searchs" method="get">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                @elseif($title==="Product")
+                      <form class="d-flex" role="search" action="/searchs" method="get">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                @elseif($title==="Category")
+                      <form class="d-flex" role="search" action="{{ route('searchs.index') }}" method="get">
+                        <input class="form-control me-2" type="search" name="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success"  type="submit">Search</button>
+                    </form>
+                @else
+                    <form class="d-flex" role="search" action="/searchs" method="get">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                @endif
+
                 </div>
             </div>
             </nav>
