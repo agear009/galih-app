@@ -130,7 +130,7 @@
     <main class="form-signin w-100 m-auto">
         <h1 class="h3 mb-3 fw-normal text-center">Please Login!</h1>
 
-      <form action="{{ route('login-check') }}" method="POST">
+      <form action="login-check" method="POST">
          @csrf
         <div class="form-floating">
           <input type="email" class="form-control @error('email') is-invalid @enderror" id="floatingInput" name="email" placeholder="name@example.com" value="{{ old('email') }}" autofocus required>

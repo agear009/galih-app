@@ -1,5 +1,6 @@
 <!-- Example Code -->
-
+@auth
+{{--  //jika sudah login  --}}
         <div class="container">
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
@@ -43,9 +44,16 @@
                         <li><a class="dropdown-item" href="{{ route('testimonials.index') }}" {{ ($active==="Copywriteimage")?'active':'' }}>Image Testimonial</a></li>
                         <li><a class="dropdown-item" href="{{ route('banners.index') }}" {{ ($active==="Copywriteimage")?'active':'' }}>Image Banner</a></li>
                     </ul>
+
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#" {{ ($active==="Customer")?'active':'' }}>Customer</a>
+                    </li>
+                    <li class="nav-item">
+                        <form action="/logout" method="POST">
+                            @csrf
+                        <li class="nav-item">  <button type="submit" class="nav-link bi bi-box-arrow-right {{ ($active==="logout")?'active':'' }}"> Logout</button></li>
+                        </form>
                     </li>
                 </ul>
                 @if($title==="Testimonial")
@@ -87,4 +95,5 @@
         </div>
 
 
+@endauth
  <!-- End Example Code -->

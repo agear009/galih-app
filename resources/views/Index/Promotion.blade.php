@@ -128,8 +128,8 @@
         @forelse($Content as $content)
         <div class="responsive">
             <div class="gallery">
-              <a target="_blank" href="{{ asset('storage/Testimonials/'.$content->image_video) }}">
-                <img src="{{ asset('storage/Testimonials/'.$content->image_video) }}"alt="Cinque Terre" width="20px" height="40px">
+              <a target="_blank" href="{{ asset('storage/Contents/'.$content->image_video) }}">
+                <img src="{{ asset('storage/Contents/'.$content->image_video) }}"alt="Cinque Terre" width="20px" height="40px">
               </a>
               <div class="desc"></div>
             </div>
@@ -146,7 +146,7 @@
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-
+            <br><br><br> <br><br><br><br>
         </h2>
       </div>
       <div class="row">

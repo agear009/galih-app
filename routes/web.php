@@ -29,14 +29,15 @@ Route::get('/user',[UserController::class,'index']);
 Route::get('/categoryindex',[CategoryController::class,'index']);
 Route::get('/register',[UserController::class,'register']);
 Route::get('/login',[LoginController::class,'index']);
-Route::post('login-check', [LoginController::class, 'authenticate']);
+Route::post('/login-check', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
 Route::resource('/members',\App\Http\Controllers\MemberController::class);
 Route::resource('/promotions',\App\Http\Controllers\LandingController::class);
 
 
 
 
-
+Route::group(["middleware"=>["auth"]],function(){
 Route::resource('/users',\App\Http\Controllers\UserController::class);
 Route::resource('/category',\App\Http\Controllers\CategoryController::class);
 Route::resource('/products',\App\Http\Controllers\ProductController::class);
@@ -46,5 +47,6 @@ Route::resource('/testimonials',\App\Http\Controllers\testimonialController::cla
 Route::resource('/inject',\App\Http\Controllers\CopyWriteExtraController::class);
 Route::resource('/searchs',\App\Http\Controllers\SearchController::class);
 Route::resource('/banners',\App\Http\Controllers\BannerController::class);
+});
 
 
