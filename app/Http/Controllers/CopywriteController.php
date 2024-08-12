@@ -28,7 +28,7 @@ class CopywriteController extends Controller
     public function create()
     {
         $Product=Product::all();
-        return view('Copywrite.create',["title"=>"CopyWrite","active"=>"CopyWrite"],compact('Product'));
+        return view('CopyWrite.Create',["title"=>"CopyWrite","active"=>"CopyWrite"],compact('Product'));
 
     }
 
@@ -72,7 +72,7 @@ class CopywriteController extends Controller
     public function show(string $id)
     {
         $CopyWrite=copywrite::findOrFail($id);
-        return view('Copywrite.Show',["title"=>"CopyWrite","active"=>"CopyWrite"],compact('CopyWrite'));
+        return view('CopyWrite.Show',["title"=>"CopyWrite","active"=>"CopyWrite"],compact('CopyWrite'));
     }
 
     /**
@@ -81,7 +81,7 @@ class CopywriteController extends Controller
     public function edit(string $id)
     {
         $CopyWrite=copywrite::findOrFail($id);
-        return view('Copywrite.Edit',["title"=>"CopyWrite","active"=>"CopyWrite"],compact('CopyWrite'));
+        return view('CopyWrite.Edit',["title"=>"CopyWrite","active"=>"CopyWrite"],compact('CopyWrite'));
     }
 
 

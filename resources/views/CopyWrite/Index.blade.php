@@ -24,10 +24,10 @@
 
                 <tr>
                     <th scope="row" width="">{{ $no++ }}</th>
-                    <th scope="col" width="">{{$copywrite->headline	 }}</th>
-                    <th scope="col" width="">{{$copywrite->masalah }}</th>
-                    <th scope="col" width="">{{$copywrite->solusi }}</th>
-                    <th scope="col" width="">{{$copywrite->manfaat	 }}</th>
+                    <th scope="col" width="">{{ strip_tags($copywrite->headline) }}</th>
+                    <th scope="col" width="">{{ strip_tags($copywrite->masalah) }}</th>
+                    <th scope="col" width="">{{ strip_tags($copywrite->solusi) }}</th>
+                    <th scope="col" width="">{{ strip_tags($copywrite->manfaat) }}</th>
 
 
 

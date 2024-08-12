@@ -50,7 +50,7 @@ class CopyWriteExtraController extends Controller
         $CopyWrite=copywrite::findOrFail($id);
         //jika bool tambahkan ->get()
         $Product=product::findOrFail($id)->get();
-        return view('Copywrite.Inject',["title"=>"Copy-Write-Extra","active"=>"CopyWrite"],compact('CopyWrite','Product'));
+        return view('CopyWrite.Inject',["title"=>"Copy-Write-Extra","active"=>"CopyWrite"],compact('CopyWrite','Product'));
     }
 
     /**

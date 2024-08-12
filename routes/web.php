@@ -43,7 +43,7 @@ Route::resource('/category',\App\Http\Controllers\CategoryController::class);
 Route::resource('/products',\App\Http\Controllers\ProductController::class);
 Route::resource('/copy-writes',\App\Http\Controllers\CopywriteController::class);
 Route::resource('/contents',\App\Http\Controllers\ContentController::class);
-Route::resource('/testimonials',\App\Http\Controllers\testimonialController::class);
+Route::resource('/testimonials',\App\Http\Controllers\TestimonialController::class);
 Route::resource('/inject',\App\Http\Controllers\CopyWriteExtraController::class);
 Route::resource('/searchs',\App\Http\Controllers\SearchController::class);
 Route::resource('/banners',\App\Http\Controllers\BannerController::class);
