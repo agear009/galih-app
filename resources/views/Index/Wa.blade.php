@@ -210,5 +210,25 @@
 
 <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
+{{--  pixel fb  --}}
+
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1693033514558793');
+    fbq('track', 'AddToCart');
+  </script>
+  <noscript>
+  <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?1693033514558793&ev=PageView&noscript=1"/>
+  </noscript>
+
+{{--  end pixel fb  --}}
+
     </body>
 </html>

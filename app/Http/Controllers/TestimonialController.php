@@ -50,7 +50,7 @@ class TestimonialController extends Controller
 
             ]);
             $gambar_testimoni=$request->file('gambar_testimoni');
-            $gambar_testimoni-> storeAs('public/testimonials', $gambar_testimoni->hashName());
+            $gambar_testimoni-> storeAs('public/Testimonials', $gambar_testimoni->hashName());
 
             testimonial::create([
                 'product_id'=>$request->product_id,

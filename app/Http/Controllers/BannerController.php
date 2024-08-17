@@ -75,7 +75,7 @@ class BannerController extends Controller
         public function edit(string $id)
         {
             //dd($id);
-           $banner=banner::findORfail($id);
+           $Banner=banner::findORfail($id);
 
             // $modelbannerById = new banner;
             // $banner=$modelbannerById->getListbannerById($id);
@@ -102,7 +102,7 @@ class BannerController extends Controller
                 //upload new image
                 $banner=$request->file('banner');
 
-                $Banner->storeAs('public/Banners',$banner->hashName());
+                $banner->storeAs('public/Banners',$banner->hashName());
 
 
                 //delete old image

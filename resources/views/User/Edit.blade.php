@@ -17,7 +17,7 @@
             <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email</label>
             <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" required value="{{ $user->email }}">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            <div id="emailHelp" class="form-text">Well never share your email with anyone else.</div>
             </div>
             <div class="mb-3">
             <label for="exampleInputaddress1" class="form-label">Address</label>
@@ -26,6 +26,10 @@
             <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
             <input type="password" class="form-control" name="password" id="exampleInputPassword1" required>
+            </div>
+            <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">ID Artist</label>
+            <input type="text" class="form-control" name="id_artist" id="exampleInputPassword1">
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>

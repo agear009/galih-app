@@ -45,6 +45,10 @@
                     <option name="size" value="XL">XL</option>
                     <option name="size" value="XXL">XXL</option>
                     <option name="size" value="XXXL">XXXL</option>
+                    <option name="size" value="">-- Ukuruan Perumahan / villa --</option>
+                    <option name="size" value="Type 45/84 (1 Bedroom )">Type 45/84 (1 Bedroom )</option>
+                    <option name="size" value="Type 70/120 (2 Bedroom )">Type 70/120 (2 Bedroom )</option>
+                    <option name="size" value="Type 90/90. (3 Bedroom )">Type 90/90. (3 Bedroom )</option>
                 </select>
             </div>
             <div class="mb-3">

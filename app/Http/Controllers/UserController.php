@@ -37,10 +37,13 @@ class UserController extends Controller
         'name'=>$request->name,
         'phone'=>$request->phone,
         'email'=>$request->email,
+        'level_user'=>$request->level_user,
         'address'=>$request->address,
-        'password'=>$request->password
+        'status'=>$request->status,
+        'password'=>$request->password,
+        'id_artist'=>$request->id_artist
         ]);
-        return redirect('/user')->with('success','Registration successfull! ');
+        return redirect('/user')->with('success','Registration user successfull! ');
 
 
 
@@ -76,8 +79,11 @@ public function update(Request $request, $id): RedirectResponse
             'name'=>$request->name,
             'phone'=>$request->phone,
             'email'=>$request->email,
+            'level_user'=>$request->level_user,
             'address'=>$request->address,
-            'password'=>$request->password
+            'status'=>$request->status,
+            'password'=>$request->password,
+            'id_artist'=>$request->id_artist
             ]);
             return redirect('/user')->with('success','Registration successfull! ');
 

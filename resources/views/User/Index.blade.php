@@ -14,7 +14,9 @@
                     <th scope="col">Name</th>
                     <th scope="col">Phone</th>
                     <th scope="col">Email</th>
+                    <th scope="col">level</th>
                     <th scope="col">Address</th>
+                    <th scope="col">Status</th>
 
                     <th scope="col">Menu</th>
                 </tr>
@@ -28,7 +30,9 @@
                     <th scope="col" width="">{{ $user->name }}</th>
                     <th scope="col" width="">{{ $user->phone }}</th>
                     <th scope="col" width="">{{ $user->email }}</th>
+                    <th scope="col" width="">{{ $user->level_user }}</th>
                     <th scope="col" width="">{{ $user->address }}</th>
+                    <th scope="col" width="">{{ $user->status }}</th>
 
                     <td width="90px">
 

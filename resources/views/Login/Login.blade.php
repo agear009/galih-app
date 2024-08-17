@@ -44,7 +44,7 @@
            <button class="btn btn-primary w-100 py-2" type="submit">Login</button>
 
          </form>
-         <small class="d-block text-center mt-3">Not registerd ? <a href="index#contact">Register Now!</a></small>
+         <small class="d-block text-center mt-3">Not registerd ? <a href="/register">Register Now!</a></small>
        </main>
 
     </div>
