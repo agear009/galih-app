@@ -24,7 +24,7 @@ class RegisterController extends Controller
     }
 
     public function store(request $request){
-
+        dd($request);
         $date=date("Ymd");
         $part1=date("his");
         $code=$date.$part1;
@@ -53,11 +53,11 @@ class RegisterController extends Controller
         ]);
         Artis::create([
             'id_user'=>$code,
-            'artist'=>$request->name,
-            'song'=>$request->name,
-            'cover'=>$request->name,
+            'artist'=>$request->artist,
+            'song'=>$request->song,
+            'cover'=>$request->cover
         ]);
-        return redirect('/user')->with('success','Registration user successfull! ');
+        return redirect('/index')->with('success','Registration user successfull! ');
 
 
 

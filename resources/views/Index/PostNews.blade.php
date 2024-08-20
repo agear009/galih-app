@@ -154,7 +154,7 @@
               <div class="stats-item">
                 <i class="bi bi-emoji-smile"></i>
                 <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-                <p><strong>Happy Clients</strong> <span>consequuntur quae</span></p>
+                <p><strong>Client Puas</strong> <span>consequuntur quae</span></p>
               </div>
             </div><!-- End Stats Item -->
 
@@ -162,7 +162,7 @@
               <div class="stats-item">
                 <i class="bi bi-journal-richtext"></i>
                 <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-                <p><strong>Projects</strong> <span>adipisci atque cum quia aut</span></p>
+                <p><strong>Permintaan</strong> <span>Daftar Permintaan</span></p>
               </div>
             </div><!-- End Stats Item -->
 
@@ -170,7 +170,7 @@
               <div class="stats-item">
                 <i class="bi bi-headset"></i>
                 <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
-                <p><strong>Hours Of Support</strong> <span>aut commodi quaerat</span></p>
+                <p><strong>Pelayanan</strong> <span>Telah melayani permintaan yang banyak</span></p>
               </div>
             </div><!-- End Stats Item -->
 
@@ -178,7 +178,7 @@
               <div class="stats-item">
                 <i class="bi bi-people"></i>
                 <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
-                <p><strong>Hard Workers</strong> <span>rerum asperiores dolor</span></p>
+                <p><strong>Pengajuan</strong> <span></span></p>
               </div>
             </div><!-- End Stats Item -->
 
@@ -231,7 +231,7 @@
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
           <h2>Layanan</h2>
-          <p>menyediakan berbagai layanan untuk membantu artis, label, dan manajer dalam mendistribusikan, mengelola, dan mempromosikan.</p>
+          <p>Menyediakan berbagai layanan untuk membantu artis, label, dan manajer dalam mendistribusikan, mengelola, dan mempromosikan.</p>
         </div><!-- End Section Title -->
 
         <div class="container">
@@ -362,247 +362,9 @@
 
       </section><!-- /Why Us Section -->
 
-      <!-- Portfolio Section -->
-      <section id="portfolio" class="portfolio section light-background">
 
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Portfolio</h2>
-          <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-        </div><!-- End Section Title -->
 
-        <div class="container">
 
-          <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-            <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-product">Product</li>
-              <li data-filter=".filter-branding">Branding</li>
-              <li data-filter=".filter-books">Books</li>
-            </ul><!-- End Portfolio Filters -->
-
-            <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                <img src="assets/post/assets/img/portfolio/app-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>App 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/post/assets/img/portfolio/app-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                <img src="assets/post/assets/img/portfolio/product-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Product 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/post/assets/img/portfolio/product-1.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                <img src="assets/post/assets/img/portfolio/branding-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Branding 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/post/assets/img/portfolio/branding-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-                <img src="assets/post/assets/img/portfolio/books-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Books 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/post/assets/img/portfolio/books-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                <img src="assets/post/assets/img/portfolio/app-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>App 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/post/assets/img/portfolio/app-2.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                <img src="assets/img/portfolio/product-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Product 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/post/assets/img/portfolio/product-2.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                <img src="assets/post/assets/img/portfolio/branding-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Branding 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/branding-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-                <img src="assets/post/assets/img/portfolio/books-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Books 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/post/assets/img/portfolio/books-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                <img src="assets/post/assets/img/portfolio/app-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>App 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/app-3.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                <img src="assets/post/assets/img/portfolio/product-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Product 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/product-3.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                <img src="assets/post/assets/img/portfolio/branding-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Branding 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/post/assets/img/portfolio/branding-3.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-                <img src="assets/post/assets/img/portfolio/books-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Books 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/post/assets/img/portfolio/books-3.jpg" title="Branding 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div><!-- End Portfolio Item -->
-
-            </div><!-- End Portfolio Container -->
-
-          </div>
-
-        </div>
-
-      </section><!-- /Portfolio Section -->
-
-      <!-- Team Section -->
-      <section id="team" class="team section">
-
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Team</h2>
-          <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-        </div><!-- End Section Title -->
-
-        <div class="container">
-
-          <div class="row gy-4">
-
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-              <div class="member">
-                <img src="assets/post/assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                <div class="member-info">
-                  <div class="member-info-content">
-                    <h4>Walter White</h4>
-                    <span>Chief Executive Officer</span>
-                    <div class="social">
-                      <a href=""><i class="bi bi-twitter-x"></i></a>
-                      <a href=""><i class="bi bi-facebook"></i></a>
-                      <a href=""><i class="bi bi-instagram"></i></a>
-                      <a href=""><i class="bi bi-linkedin"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End Team Member -->
-
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-              <div class="member">
-                <img src="assets/post/assets/img/team/team-2.jpg" class="img-fluid" alt="">
-                <div class="member-info">
-                  <div class="member-info-content">
-                    <h4>Sarah Jhonson</h4>
-                    <span>Product Manager</span>
-                    <div class="social">
-                      <a href=""><i class="bi bi-twitter-x"></i></a>
-                      <a href=""><i class="bi bi-facebook"></i></a>
-                      <a href=""><i class="bi bi-instagram"></i></a>
-                      <a href=""><i class="bi bi-linkedin"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End Team Member -->
-
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-              <div class="member">
-                <img src="assets/post/assets/img/team/team-3.jpg" class="img-fluid" alt="">
-                <div class="member-info">
-                  <div class="member-info-content">
-                    <h4>William Anderson</h4>
-                    <span>CTO</span>
-                    <div class="social">
-                      <a href=""><i class="bi bi-twitter-x"></i></a>
-                      <a href=""><i class="bi bi-facebook"></i></a>
-                      <a href=""><i class="bi bi-instagram"></i></a>
-                      <a href=""><i class="bi bi-linkedin"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End Team Member -->
-
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
-              <div class="member">
-                <img src="assets/post/assets/img/team/team-4.jpg" class="img-fluid" alt="">
-                <div class="member-info">
-                  <div class="member-info-content">
-                    <h4>Amanda Jepson</h4>
-                    <span>Accountant</span>
-                    <div class="social">
-                      <a href=""><i class="bi bi-twitter-x"></i></a>
-                      <a href=""><i class="bi bi-facebook"></i></a>
-                      <a href=""><i class="bi bi-instagram"></i></a>
-                      <a href=""><i class="bi bi-linkedin"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End Team Member -->
-
-          </div>
-
-        </div>
-
-      </section><!-- /Team Section -->
 
       <!-- Pricing Section -->
       <section id="pricing" class="pricing section">
@@ -627,7 +389,7 @@
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
           <h2>Kontak</h2>
-          <p>anda dapat berkonsultasi dengan cara mendatangi kantor kami langsung atau melalui kontak kami</p>
+          <p>Anda dapat berkonsultasi dengan cara mendatangi kantor kami langsung atau melalui kontak kami</p>
         </div><!-- End Section Title -->
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -661,10 +423,11 @@
           </div>
 
           <form action="{{ route('registermusic.store') }}" method="POST" class="php-email-form" enctype="multipart/form-data">
+            @csrf
             <div class="row gy-4">
 
               <div class="col-md-6">
-                <input type="text" name="nama" class="form-control" placeholder="Nama Anda" >
+                <input type="text" name="name" class="form-control" placeholder="Nama Anda" >
               </div>
 
               <div class="col-md-6 ">
@@ -672,20 +435,21 @@
               </div>
 
               <div class="col-md-6 ">
-                <input type="number" class="form-control" name="nohp" placeholder="nomor handphone dan WA" >
+                <input type="text" class="form-control" name="phone" placeholder="nomor handphone dan WA" >
               </div>
 
               <div class="col-md-6 ">
-                <input type="text" class="form-control" name="alamat" placeholder="Alamat Sesuai KTP" >
+                <input type="text" class="form-control" name="address" placeholder="Alamat Sesuai KTP" >
               </div>
 
               <div class="col-md-12">
-                <input type="text" class="form-control" name="artis" placeholder="Silahkan masukan nama artis anda bila lebih dari satu slahkan memakai koma untuk memisahkan nama - nama artis" >
+                <input type="text" class="form-control" name="artist" placeholder="Silahkan masukan nama artis anda bila lebih dari satu slahkan memakai koma untuk memisahkan nama - nama artis" >
               </div>
 
               <div class="col-md-12">
-                <input type="text" class="form-control" name="lagu" placeholder="Silahkan masukan judul lagu anda bila lebih dari satu slahkan memakai koma untuk memisahkan judul - judul lagu anda">
+                <input type="text" class="form-control" name="song" placeholder="Silahkan masukan judul lagu anda bila lebih dari satu slahkan memakai koma untuk memisahkan judul - judul lagu anda">
                 <input type="hidden" class="form-control" name="level_user" value="anggota">
+                <input type="hidden" class="form-control" name="status" value="pendaftar">
               </div>
                 <button type="submit" >Daftar</button>
               </div>
