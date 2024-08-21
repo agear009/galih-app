@@ -24,7 +24,7 @@ class RegisterController extends Controller
     }
 
     public function store(request $request){
-        dd($request);
+       //dd($request);
         $date=date("Ymd");
         $part1=date("his");
         $code=$date.$part1;
@@ -34,9 +34,7 @@ class RegisterController extends Controller
         'name' =>'required|max:255',
         'phone' =>'required|max:255',
         'email' =>'required|max:255',
-        'address' =>'required',
-        'password' =>'required',
-        'id_artist' =>$code
+        'address' =>'required'
     ]);
 
         user::create([
@@ -46,7 +44,9 @@ class RegisterController extends Controller
         'level_user'=>$request->level_user,
         'address'=>$request->address,
         'status'=>$request->status,
-        'password'=>$request->password
+        'password'=>'12345678',
+        'id_artist'=>$code,
+
 
 
 
@@ -55,7 +55,7 @@ class RegisterController extends Controller
             'id_user'=>$code,
             'artist'=>$request->artist,
             'song'=>$request->song,
-            'cover'=>$request->cover
+            'cover'=>'belum terdapat cover'
         ]);
         return redirect('/index')->with('success','Registration user successfull! ');
 
