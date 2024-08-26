@@ -6,6 +6,7 @@ use App\Http\Controllers\PostNewsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\EditNewUserController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\CopywriteController;
@@ -43,6 +44,7 @@ Route::resource('/registermusic',\App\Http\Controllers\RegisterController::class
 
 Route::group(["middleware"=>["auth"]],function(){
 Route::resource('/users',\App\Http\Controllers\UserController::class);
+Route::resource('/user-news',\App\Http\Controllers\EditNewUserController::class);
 Route::resource('/category',\App\Http\Controllers\CategoryController::class);
 Route::resource('/post',\App\Http\Controllers\PostController::class);
 Route::resource('/products',\App\Http\Controllers\ProductController::class);

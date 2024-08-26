@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Artis;
 
-class UserController extends Controller
+class EditNewUserController extends Controller
 {
     //
     public function Index(){
@@ -52,11 +52,15 @@ class UserController extends Controller
 
     }
 
-public function edit(string $id):View
+public function edit(string $id_artist):View
 {
+
+    //dd($id_artist);
     //get member by id
-    $user=user::findOrFail($id);
-    return view('User.Edit',["title"=>"User","active"=>"User"], compact('user'));
+    $user=artis::findOrFail($id_artist);
+    dd($id_artist);
+    exit;
+    return view('User.Edit_New_User',["title"=>"User","active"=>"User"], compact('user'));
 
 }
 
