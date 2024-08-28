@@ -57,10 +57,11 @@ public function edit(string $id_artist):View
 
     //dd($id_artist);
     //get member by id
-    $user=artis::findOrFail($id_artist);
-    dd($id_artist);
-    exit;
-    return view('User.Edit_New_User',["title"=>"User","active"=>"User"], compact('user'));
+    //$user=artis::findOrFail($id_artist);
+    $artist=artis::find($id_artist);
+   // dd($id_artist);
+    //exit;
+    return view('Artist.Edit_artist',["title"=>"Artis","active"=>"User"], compact('artist'));
 
 }
 

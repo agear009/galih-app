@@ -44,7 +44,7 @@ Route::resource('/registermusic',\App\Http\Controllers\RegisterController::class
 
 Route::group(["middleware"=>["auth"]],function(){
 Route::resource('/users',\App\Http\Controllers\UserController::class);
-Route::resource('/user-news',\App\Http\Controllers\EditNewUserController::class);
+Route::resource('/artist',\App\Http\Controllers\EditNewUserController::class);
 Route::resource('/category',\App\Http\Controllers\CategoryController::class);
 Route::resource('/post',\App\Http\Controllers\PostController::class);
 Route::resource('/products',\App\Http\Controllers\ProductController::class);
