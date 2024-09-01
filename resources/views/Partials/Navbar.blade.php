@@ -61,6 +61,18 @@
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Agregator
+                        </a>
+                        <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ route('post.index') }}" {{ ($active==="Category")?'active':'' }}></a></li>
+                        <li><a class="dropdown-item" href="{{ route('artist.index') }}" {{ ($active==="ImageCover")?'active':'' }}>Artis</a></li>
+                        <li><a class="dropdown-item" href="#" {{ ($active==="Image")?'active':'' }}>Image</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Page
                         </a>
                         <ul class="dropdown-menu">
