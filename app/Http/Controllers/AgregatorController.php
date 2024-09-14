@@ -19,12 +19,13 @@ class AgregatorController extends Controller
         //$Artis=artis::all();
         $modelbanner = new Artis;
         $Artist=$modelbanner->getListArtis();
-        return View('Agregator.Index',["title"=>"User","active"=>"Home"],compact('Artist','no'));
+        return View('Agregator.Index',["title"=>"Agregator","active"=>"Home"],compact('Artist','no'));
     }
     public function create(Request $id_users):view
     {
         $user=user::FindOrFail($id_users);
         return View('Agregator.Create',["title"=>"Creat Artist","active"=>"Home"], compact('user'));
+
 
     }
 

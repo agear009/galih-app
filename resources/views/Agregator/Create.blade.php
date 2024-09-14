@@ -9,7 +9,7 @@
             @csrf
             <div class="mb-3">
             <label for="exampleInputname1" class="form-label">ID Manager</label>
-            <input disabled type="text" class="form-control" id="name" name="id_artist" aria-describedby="id_user" required value="{{ $user->id_artist }}">
+            <input disabled type="text" class="form-control" id="name" name="id_artist" aria-describedby="id_user" required value="{{ $user->id_user }}">
             </div>
             <div class="mb-3">
             <label for="exampleInputphone1" class="form-label">Artis</label>

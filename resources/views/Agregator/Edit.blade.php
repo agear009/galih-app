@@ -20,6 +20,15 @@
             <label for="exampleInputEmail1" class="form-label">Lagu</label>
             <input type="text" class="form-control" id="email" name="song" aria-describedby="emailHelp" required value="{{ $Artist->song }}">
             </div>
+            <div class="mb-3">
+                <label for="exampleInputname1" class="form-label">Lirik</label>
+                <textarea id="myTextarea" name="content"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputname1" class="form-label">Keterangan</label>
+                <textarea id="myTextarea" name="content"></textarea>
+            </div>
 
 
             <button type="submit" class="btn btn-primary">Submit</button>
