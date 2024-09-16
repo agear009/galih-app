@@ -16,7 +16,7 @@
             <div class="carousel-container">
               <h2>Kami profesional</h2>
               <p>MULAILAH PERJALANAN PENERBITAN MUSIK ANDA HARI INI</p>
-              <a href="#featured-services" class="btn-get-started">Memulai</a>
+              <a href="#contact" class="btn-get-started">Memulai</a>
             </div>
           </div><!-- End Carousel Item -->
 
@@ -448,7 +448,7 @@
 
               <div class="col-md-12">
                 <input type="text" class="form-control" name="song" placeholder="Silahkan masukan judul lagu anda bila lebih dari satu slahkan memakai koma untuk memisahkan judul - judul lagu anda">
-                <input type="hidden" class="form-control" name="level_user" value="anggota">
+                <input type="hidden" class="form-control" name="level_user" value="Belum ada">
                 <input type="hidden" class="form-control" name="status" value="pendaftar">
               </div>
                 <button type="submit" >Daftar</button>

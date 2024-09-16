@@ -1,6 +1,6 @@
 <!-- Example Code -->
 @auth
-@if( auth()->user()->level_user==="anggota")
+@if( auth()->user()->level_user==="Anggota")
 <div class="container">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
@@ -12,6 +12,9 @@
         <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
             <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/admin" {{ ($active==="Home")?'active':'' }}>Home</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/admin" {{ ($active==="Home")?'active':'' }}>Artis</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -234,9 +237,8 @@
                             Agregator
                             </a>
                             <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ route('post.index') }}" {{ ($active==="Category")?'active':'' }}></a></li>
                             <li><a class="dropdown-item" href="{{ route('artist.index') }}" {{ ($active==="ImageCover")?'active':'' }}>Artis</a></li>
-                            <li><a class="dropdown-item" href="#" {{ ($active==="Image")?'active':'' }}>Image</a></li>
+                            <li><a class="dropdown-item" href="{{ route('album.index') }}" {{ ($active==="Image")?'active':'' }}>Album</a></li>
 
                             </ul>
                         </li>

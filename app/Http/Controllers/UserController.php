@@ -73,6 +73,7 @@ public function update(Request $request, $id): RedirectResponse
 
     ]);
     //get member by id
+    //dd();
     $user=user::FindOrFail($id);
 
         $user->update([

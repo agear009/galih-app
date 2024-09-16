@@ -21,11 +21,11 @@
 
             <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Level User</label>
-            <select class="form-control" id="size" name="status" aria-describedby="size" required value="{{ old('size') }}">
-                <option name="size" value="{{ $user->level_user }}">{{ $user->level_user }}</option>
-                <option name="size" value="Karyawan">Karyawan</option>
-                <option name="size" value="Anggota">Anggota</option>
-                <option name="size" value="Pendaftar">Pendaftar</option>
+            <select class="form-control" id="size" name="level_user" aria-describedby="size" required value="{{ old('size') }}">
+                <option name="level_user" value="{{ $user->level_user }}">{{ $user->level_user }}</option>
+                <option name="level_user" value="Karyawan">Karyawan</option>
+                <option name="level_user" value="Anggota">Anggota</option>
+                <option name="level_user" value="Pendaftar">Pendaftar</option>
 
             </select>
             <input disabled type="disable" class="form-control" id="email" name="level_user" aria-describedby="emailHelp" required value="{{ $user->level_user }}">

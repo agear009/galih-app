@@ -19,12 +19,14 @@ class AgregatorController extends Controller
         //$Artis=artis::all();
         $modelbanner = new Artis;
         $Artist=$modelbanner->getListArtis();
-        return View('Agregator.Index',["title"=>"Agregator","active"=>"Home"],compact('Artist','no'));
+        $users=user::all();
+        return View('Agregator.Index',["title"=>"Agregator","active"=>"Home"],compact('Artist','users','no'));
     }
     public function create(Request $id_users):view
     {
-        $user=user::FindOrFail($id_users);
-        return View('Agregator.Create',["title"=>"Creat Artist","active"=>"Home"], compact('user'));
+        //$user=user::FindOrFail($id_users);
+        $users=user::all();
+        return View('Agregator.Create',["title"=>"Creat Artist","active"=>"Home"], compact('users'));
 
 
     }
@@ -33,24 +35,32 @@ class AgregatorController extends Controller
 
     $this->validate($request,[
 
-        'name' =>'required|max:255',
-        'phone' =>'required|max:255',
-        'email' =>'required|max:255',
-        'address' =>'required',
-        'password' =>'required'
-    ]);
+        'id_user' =>'required|max:255',
+        'artist' =>'required|max:255',
+        'song' =>'required|max:255'
 
-        user::create([
-        'name'=>$request->name,
-        'phone'=>$request->phone,
-        'email'=>$request->email,
-        'level_user'=>$request->level_user,
-        'address'=>$request->address,
-        'status'=>$request->status,
-        'password'=>$request->password,
-        'id_artist'=>$request->id_artist
+    ]);
+        //dd($request);
+        artis::create([
+            'id_user'=>$request->id_user,
+            'artist'=>$request->artist,
+            'album'=>$request->album,
+            'song'=>$request->song,
+            'pencipta_lagu'=>$request->pencipta_lagu,
+            'tentang_artis'=>$request->tentang_artis,
+            'lirik'=>$request->lirik,
+            'keterangan_lagu'=>$request->keterangan_lagu,
+            'facebook'=>$request->facebook,
+            'x'=>$request->x,
+            'youtube'=>$request->youtube,
+            'instagram'=>$request->instagram,
+            'apple'=>$request->apple,
+            'spotify'=>$request->spotify,
+            'tiktok'=>$request->tiktok,
+            'joox'=>$request->joox,
+            'tidal'=>$request->tidal
         ]);
-        return redirect('/user')->with('success','Registration user successfull! ');
+        return redirect('/artist')->with('success','Registration user successfull! ');
 
 
 
@@ -82,12 +92,27 @@ public function update(Request $request, $id): RedirectResponse
     ]);
     //get member by id
     $artis=artis::FindOrFail($id);
-
+        //dd($request);
         $artis->update([
 
 
+            'id_user'=>$request->id_user,
             'artist'=>$request->artist,
-            'song'=>$request->song
+            'album'=>$request->album,
+            'song'=>$request->song,
+            'pencipta_lagu'=>$request->pencipta_lagu,
+            'tentang_artis'=>$request->tentang_artis,
+            'lirik'=>$request->lirik,
+            'keterangan_lagu'=>$request->keterangan_lagu,
+            'facebook'=>$request->facebook,
+            'x'=>$request->x,
+            'youtube'=>$request->youtube,
+            'instagram'=>$request->instagram,
+            'apple'=>$request->apple,
+            'spotify'=>$request->spotify,
+            'tiktok'=>$request->tiktok,
+            'joox'=>$request->joox,
+            'tidal'=>$request->tidal
             ]);
             return redirect('/artist')->with('success','sudah dirubah ');
 

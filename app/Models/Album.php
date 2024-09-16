@@ -5,28 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+class Album extends Model
 
-class Artis extends Model
 {
     use HasFactory;
     protected $fillable = [
         'id_user',
-        'artist',
-        'album',
-        'song',
-        'pencipta_lagu',
-        'tentang_artis',
-        'lirik',
-        'keterangan_lagu',
-        'facebook',
-        'x',
-        'youtube',
-        'instagram',
-        'apple',
-        'spotify',
-        'tiktok',
-        'joox',
-        'tidal'
+        'nameAlbum',
+        'cover'
 
     ];
 
@@ -39,3 +25,4 @@ class Artis extends Model
                                 return $listArtis;
                             }
 }
+

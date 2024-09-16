@@ -19,24 +19,24 @@
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
+          <h4> Links</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Tentang</a></li>
+            <li><a href="#">Layanan</a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
+          <h4>Layanan Lain</h4>
           <ul>
             <li><a href="#">Web Design</a></li>
             <li><a href="#">Web Development</a></li>
             <li><a href="#">Product Management</a></li>
             <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
+            <li><a href="#"></a></li>
           </ul>
         </div>
 
@@ -54,7 +54,7 @@
         <!-- You can delete the links only if you've purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Edited <a href="https://galih09.my.id/">GSA</a>
+        Edited <a target="blank" href="https://galih09.my.id/">GSA</a>
       </div>
     </div>
 

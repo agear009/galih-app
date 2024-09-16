@@ -54,8 +54,21 @@ class RegisterController extends Controller
         Artis::create([
             'id_user'=>$code,
             'artist'=>$request->artist,
+            'album'=>'belum terdapat album',
             'song'=>$request->song,
-            'cover'=>'belum terdapat cover'
+            'pencipta_lagu'=>'belum terdapat pencipta_lagu',
+            'tentang_artis'=>'belum terdapat tentang_artis',
+            'lirik'=>'belum terdapat lirik',
+            'keterangan_lagu'=>'belum terdapat keterangan_lagu',
+            'facebook'=>'#',
+            'x'=>'#',
+            'youtube'=>'#',
+            'instagram'=>'#',
+            'apple'=>'#',
+            'spotify'=>'#',
+            'tiktok'=>'#',
+            'joox'=>'#',
+            'tidal'=>'#'
         ]);
         return redirect('/index')->with('success','Registration user successfull! ');
 
