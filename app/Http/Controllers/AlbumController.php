@@ -33,17 +33,12 @@ class AlbumController extends Controller
          */
         public function create()
         {
-            //$Album=album::all();
-            //$users=user::all();
-            @if( auth()->user()->id_artist==="" )
+
                 $Album=album::all();
                 $users=user::all();
-                return view('Album.Create',["title"=>"album","active"=>"album"],compact('Album','users'));
-            @else
-                $Album=album::all();
-                $users=user::where('id_artist','=', auth()->user()->id_artist)->get();
-                return view('Album.Create',["title"=>"album","active"=>"album"],compact('Album','users'));
-            @endif
+                $userst=user::where('id_artist','=', auth()->user()->id_artist)->get();
+                return view('Album.Create',["title"=>"album","active"=>"album"],compact('Album','users','userst'));
+
 
         }
 

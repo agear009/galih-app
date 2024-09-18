@@ -40,54 +40,54 @@
             </div>
             <div class="mb-3">
                 <label for="exampleInputname1" class="form-label">Tentang Artis</label>
-                <textarea id="myTextarea" name="tentang_artis"></textarea>
+                <textarea id="myTextarea" name="tentang_artis" required></textarea>
             </div>
             <div class="mb-3">
-                <label for="exampleInputname1" class="form-label">Lirik dan kunci gitar</label>
-                <textarea id="myTextarea" name="lirik"></textarea>
+                <label for="exampleInputname1" class="form-label" >Lirik dan kunci gitar</label>
+                <textarea id="myTextarea" name="lirik" required></textarea>
             </div>
 
             <div class="mb-3">
                 <label for="exampleInputname1" class="form-label">Keterangan Lagu</label>
-                <textarea id="myTextarea" name="keterangan_lagu"></textarea>
+                <textarea id="myTextarea" name="keterangan_lagu" required></textarea>
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Link Facebook</label>
-                <input type="text" class="form-control" id="email" name="facebook" aria-describedby="emailHelp" value="#">
+                <input type="text" class="form-control" id="email" name="facebook" aria-describedby="emailHelp" value="#" required>
                 </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Link X</label>
-                <input type="text" class="form-control" id="email" name="x" aria-describedby="emailHelp" value="#">
+                <input type="text" class="form-control" id="email" name="x" aria-describedby="emailHelp" value="#" required>
                 </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Link Youtube</label>
-                <input type="text" class="form-control" id="email" name="youtube" aria-describedby="emailHelp" value="#">
+                <input type="text" class="form-control" id="email" name="youtube" aria-describedby="emailHelp" value="#" required>
                 </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Link Instagram</label>
-                <input type="text" class="form-control" id="email" name="instagram" aria-describedby="emailHelp" value="#">
+                <input type="text" class="form-control" id="email" name="instagram" aria-describedby="emailHelp" value="#" required>
                 </div>
                 <label for="exampleInputEmail1" class="form-label">Publikasi</label>
                 <hr>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Apple Music</label>
-                <input type="text" class="form-control" id="email" name="apple" aria-describedby="emailHelp" value="#">
+                <input type="text" class="form-control" id="email" name="apple" aria-describedby="emailHelp" value="#" required>
                 </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Spotify</label>
-                <input type="text" class="form-control" id="email" name="spotify" aria-describedby="emailHelp" value="#">
+                <input type="text" class="form-control" id="email" name="spotify" aria-describedby="emailHelp" value="#" required>
                 </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Tiktok</label>
-                <input type="text" class="form-control" id="email" name="tiktok" aria-describedby="emailHelp" value="#">
+                <input type="text" class="form-control" id="email" name="tiktok" aria-describedby="emailHelp" value="#" required>
                 </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Joox</label>
-                <input type="text" class="form-control" id="email" name="joox" aria-describedby="emailHelp" value="#">
+                <input type="text" class="form-control" id="email" name="joox" aria-describedby="emailHelp" value="#" required>
                 </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Tidal</label>
-                <input type="text" class="form-control" id="email" name="tidal" aria-describedby="emailHelp" value="#">
+                <input type="text" class="form-control" id="email" name="tidal" aria-describedby="emailHelp" value="#" required>
                 </div>
 
 
