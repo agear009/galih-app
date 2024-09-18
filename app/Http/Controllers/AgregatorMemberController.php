@@ -16,16 +16,22 @@ class AgregatorMemberController extends Controller
     public function Index(){
         $no=0;
         $no++;
-        $Users=user::FindOrFail(auth()->user()->id);
+        //$Users=user::all();
         //$Artis=artis::all();
         $modelbanner = new Artis;
-        $Artist=$modelbanner->getListArtis();
-        return View('Agregator.Index',["title"=>"Agregator","active"=>"Home"],compact('Users','Artist','no'));
+        //$Artist=$modelbanner->getListArtis();
+
+       // $Artist=artis::where('id_user','=',request(auth()->user()->id_artist))->get();
+        $Artist=artis::where('id_user','=', auth()->user()->id_artist)->get();
+        $users=user::all();
+        return View('AgregatorMember.Index',["title"=>"AgregatorMember","active"=>"Home"],compact('Artist','users','no'));
     }
     public function create(Request $id_users):view
     {
-        $user=user::FindOrFail($id_users);
-        return View('Agregator.Create',["title"=>"Creat Artist","active"=>"Home"], compact('user'));
+        //$userst=user::FindOrFail(auth()->user()->id)->get();
+        $users=user::all();
+        $userst=user::where('id_artist','=', auth()->user()->id_artist)->get();
+        return View('AgregatorMember.Create',["title"=>"Creat Artist","active"=>"Home"], compact('userst','users'));
 
 
     }
@@ -36,31 +42,30 @@ class AgregatorMemberController extends Controller
 
         'id_user' =>'required|max:255',
         'artist' =>'required|max:255',
-        'song' =>'required|max:255',
-        'pencipta_lagu' =>'required'
+        'song' =>'required|max:255'
+
     ]);
-
-        Artis::create([
-
-        'id_user'=>$request->id_user,
-        'artist'=>$request->artist,
-        'song'=>$request->song,
-        'tentang_artis'=>$request->tentang_artis,
-        'lirik'=>$request->lirik,
-        'keterangan_lagu'=>$request->keterangan_lagu,
-        'facebook'=>$request->facebook,
-        'x'=>$request->x,
-        'youtube'=>$request->youtube,
-        'instagram'=>$request->instagram,
-        'apple'=>$request->apple,
-        'spotify'=>$request->spotify,
-        'joox'=>$request->joox,
-        'tidal'=>$request->tidal
-
-
-
+        //dd($request);
+        artis::create([
+            'id_user'=>$request->id_user,
+            'artist'=>$request->artist,
+            'album'=>$request->album,
+            'song'=>$request->song,
+            'pencipta_lagu'=>$request->pencipta_lagu,
+            'tentang_artis'=>$request->tentang_artis,
+            'lirik'=>$request->lirik,
+            'keterangan_lagu'=>$request->keterangan_lagu,
+            'facebook'=>$request->facebook,
+            'x'=>$request->x,
+            'youtube'=>$request->youtube,
+            'instagram'=>$request->instagram,
+            'apple'=>$request->apple,
+            'spotify'=>$request->spotify,
+            'tiktok'=>$request->tiktok,
+            'joox'=>$request->joox,
+            'tidal'=>$request->tidal
         ]);
-        return redirect('/user')->with('success','Registration user successfull! ');
+        return redirect('/member')->with('success','Registration user successfull! ');
 
 
 
@@ -70,36 +75,52 @@ class AgregatorMemberController extends Controller
 public function edit(string $id):View
 {
 
-    //dd($id_artist);
+    //dd($id_member);
     //get member by id
     $Artist=artis::findOrFail($id);
-    //$Artist=Artis::where($id);
-  // dd($id_artist);
+    //$member=Artis::where($id);
+  // dd($id_member);
    // exit;
-    return view('Agregator.Edit',["title"=>"Artis","active"=>"User"], compact('Artist'));
+    return view('AgregatorMember.Edit',["title"=>"Artis","active"=>"User"], compact('Artist'));
 
 }
 
 public function update(Request $request, $id): RedirectResponse
 
 {
-
+    //dd($request);
     $this->validate($request,[
 
-        'artist' =>'required|max:255',
+        'id_user' =>'required|max:255',
         'song' =>'required|max:255'
 
     ]);
+
     //get member by id
     $artis=artis::FindOrFail($id);
-
+        //dd($request);
         $artis->update([
 
 
+            'id_user'=>$request->id_user,
             'artist'=>$request->artist,
-            'song'=>$request->song
+            'album'=>$request->album,
+            'song'=>$request->song,
+            'pencipta_lagu'=>$request->pencipta_lagu,
+            'tentang_artis'=>$request->tentang_artis,
+            'lirik'=>$request->lirik,
+            'keterangan_lagu'=>$request->keterangan_lagu,
+            'facebook'=>$request->facebook,
+            'x'=>$request->x,
+            'youtube'=>$request->youtube,
+            'instagram'=>$request->instagram,
+            'apple'=>$request->apple,
+            'spotify'=>$request->spotify,
+            'tiktok'=>$request->tiktok,
+            'joox'=>$request->joox,
+            'tidal'=>$request->tidal
             ]);
-            return redirect('/artist')->with('success','sudah dirubah ');
+            return redirect('/member')->with('success','sudah dirubah ');
 
 
 }

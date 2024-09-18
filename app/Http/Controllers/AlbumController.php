@@ -33,9 +33,18 @@ class AlbumController extends Controller
          */
         public function create()
         {
-            $Album=album::all();
-            $users=user::all();
-            return view('album.Create',["title"=>"album","active"=>"album"],compact('Album','users'));
+            //$Album=album::all();
+            //$users=user::all();
+            @if( auth()->user()->id_artist==="" )
+                $Album=album::all();
+                $users=user::all();
+                return view('Album.Create',["title"=>"album","active"=>"album"],compact('Album','users'));
+            @else
+                $Album=album::all();
+                $users=user::where('id_artist','=', auth()->user()->id_artist)->get();
+                return view('Album.Create',["title"=>"album","active"=>"album"],compact('Album','users'));
+            @endif
+
         }
 
         /**
@@ -74,7 +83,7 @@ class AlbumController extends Controller
             //$album=album::where('product_id','=',$id)->get();
             $modelalbumById = new album;
             $album=$modelalbumById->getListalbumsById($id);
-            return view('album.Show',["title"=>"album","active"=>"album"],compact('album'));
+            return view('Album.Show',["title"=>"album","active"=>"album"],compact('album'));
         }
 
         /**
@@ -89,7 +98,7 @@ class AlbumController extends Controller
             // $album=$modelalbumById->getListalbumsById($id);
             //$Album=album::all();
             $users=user::all();
-            return view('album.edit',["title"=>"album","active"=>"album"],compact('album','users'));
+            return view('Album.Edit',["title"=>"album","active"=>"album"],compact('album','users'));
         }
 
         /**

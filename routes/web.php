@@ -23,7 +23,8 @@ use App\Http\Controllers\ContentController;
 |
 */
 
-Route::get('/',[IndexController::class,'index']);
+//Route::get('/',[IndexController::class,'index']);
+Route::get('/',[PostNewsController::class,'index']);
 Route::get('/index',[PostNewsController::class,'index']);
 Route::get('/profile',[IndexController::class,'profile']);
 Route::get('/product',[IndexController::class,'product']);
@@ -45,6 +46,7 @@ Route::resource('/registermusic',\App\Http\Controllers\RegisterController::class
 Route::group(["middleware"=>["auth"]],function(){
 Route::resource('/users',\App\Http\Controllers\UserController::class);
 Route::resource('/artist',\App\Http\Controllers\AgregatorController::class);
+Route::resource('/member',\App\Http\Controllers\AgregatorMemberController::class);
 Route::resource('/album',\App\Http\Controllers\AlbumController::class);
 Route::resource('/category',\App\Http\Controllers\CategoryController::class);
 Route::resource('/post',\App\Http\Controllers\PostController::class);

@@ -14,18 +14,10 @@
             <a class="nav-link active" aria-current="page" href="/admin" {{ ($active==="Home")?'active':'' }}>Home</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/admin" {{ ($active==="Home")?'active':'' }}>Artis</a>
+            <a class="nav-link active" aria-current="page" href="{{ route('member.index') }}" {{ ($active==="Home")?'active':'' }}>Artis</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Agregator
-                </a>
-                <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="{{ route('post.index') }}" {{ ($active==="Category")?'active':'' }}></a></li>
-                <li><a class="dropdown-item" href="{{ route('artist.index') }}" {{ ($active==="ImageCover")?'active':'' }}>Artis</a></li>
-                <li><a class="dropdown-item" href="#" {{ ($active==="Image")?'active':'' }}>Image</a></li>
-
-                </ul>
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{ route('album.index') }}" {{ ($active==="Home")?'active':'' }}>Album</a>
             </li>
             <li class="nav-item">
                 <form action="/logout" method="POST">

@@ -5,7 +5,7 @@
 
 
     <div class="container">
-        <form action="{{ route('artist.update', $Artist->id) }}" method="POST"  enctype="multipart/form-data" >
+        <form action="{{ route('member.update', $Artist->id) }}" method="POST"  enctype="multipart/form-data" >
             @csrf
             @method('PUT')
             <div class="mb-3">
