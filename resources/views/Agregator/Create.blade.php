@@ -28,7 +28,16 @@
             </div>
             <div class="mb-3">
             <label for="exampleInputphone1" class="form-label">Album</label>
-            <input type="text" class="form-control" id="phone" name="album" aria-describedby="phone" required >
+            <select type="text" class="form-control @error('category') is-invalid @enderror" id="floatingCategory" placeholder="Category" name="id_user" {{ old('category') }} required>
+                <option name="id_user" value="">--Select--</option>
+                @forelse($albums as $album)
+                <option name="id_user" value="{{ $album->id }}">{{  $album->nameAlbum }}</option>
+                @empty
+
+                @endforelse
+
+
+                </select>
             </div>
             <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Lagu</label>

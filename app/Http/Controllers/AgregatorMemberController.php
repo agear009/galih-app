@@ -9,6 +9,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Artis;
+use App\Models\Album;
 
 class AgregatorMemberController extends Controller
 {
@@ -30,8 +31,9 @@ class AgregatorMemberController extends Controller
     {
         //$userst=user::FindOrFail(auth()->user()->id)->get();
         $users=user::all();
+        $Albums=Album::all();
         $userst=user::where('id_artist','=', auth()->user()->id_artist)->get();
-        return View('AgregatorMember.Create',["title"=>"Creat Artist","active"=>"Home"], compact('userst','users'));
+        return View('AgregatorMember.Create',["title"=>"Creat Artist","active"=>"Home"], compact('userst','users','Albums'));
 
 
     }
@@ -128,17 +130,17 @@ public function update(Request $request, $id): RedirectResponse
 public function destroy($id): RedirectResponse
     {
         //get member id
-        $user=user::findOrFail($id);
+        $artist=artis::findOrFail($id);
 
         //delete image
 
 
 
         // delete member
-        $user->delete();
+        $artist->delete();
 
         //redirect to index
-        return redirect()->route('users.index',["title"=>"User","active"=>"User"])->with(['success'=>'data telah berhasil di delete!']);
+        return redirect()->route('member.index',["title"=>"artist","active"=>"artist"])->with(['success'=>'data telah berhasil di delete!']);
     }
 
 }

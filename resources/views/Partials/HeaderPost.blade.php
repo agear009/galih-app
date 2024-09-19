@@ -16,6 +16,7 @@
           <li><a href="#hero" class="active">Home</a></li>
           <li><a href="#about">Tentang</a></li>
           <li><a href="#services">Layanan</a></li>
+          <li><a href="#portfolio">Daftar Lagu</a></li>
           <li><a href="#contact">Kontak</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>

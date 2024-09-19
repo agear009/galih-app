@@ -7,6 +7,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Album;
 use App\Models\Artis;
 
 class AgregatorController extends Controller
@@ -20,13 +21,15 @@ class AgregatorController extends Controller
         $modelbanner = new Artis;
         $Artist=$modelbanner->getListArtis();
         $users=user::all();
-        return View('Agregator.Index',["title"=>"Agregator","active"=>"Home"],compact('Artist','users','no'));
+        $Art=artis::all();
+        return View('Agregator.Index',["title"=>"Agregator","active"=>"Home"],compact('Artist','users','no','Art'));
     }
     public function create(Request $id_users):view
     {
         //$user=user::FindOrFail($id_users);
         $users=user::all();
-        return View('Agregator.Create',["title"=>"Creat Artist","active"=>"Home"], compact('users'));
+        $albums=album::all();
+        return View('Agregator.Create',["title"=>"Creat Artist","active"=>"Home"], compact('users','albums'));
 
 
     }
@@ -122,17 +125,17 @@ public function update(Request $request, $id): RedirectResponse
 public function destroy($id): RedirectResponse
     {
         //get member id
-        $user=user::findOrFail($id);
+        $artist=Artis::findOrFail($id);
 
         //delete image
 
 
 
         // delete member
-        $user->delete();
+        $artist->delete();
 
         //redirect to index
-        return redirect()->route('users.index',["title"=>"User","active"=>"User"])->with(['success'=>'data telah berhasil di delete!']);
+        return redirect()->route('artist.index',["title"=>"Admin","active"=>"Admin"])->with(['success'=>'data telah berhasil di delete!']);
     }
 
 }

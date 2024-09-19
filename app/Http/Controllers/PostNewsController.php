@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Album;
+use App\Models\Artis;
 use Illuminate\Http\Request;
 
 class PostNewsController extends Controller
 {
     public function Index(){
-        return view('Index.PostNews',["title"=>"Home","active"=>"Home"]);
+        $Albums=Album::all();
+        $Artist=artis::all();
+        return view('Index.PostNews',["title"=>"Home","active"=>"Home"],compact('Albums','Artist'));
     }
 
     public function Profile(){

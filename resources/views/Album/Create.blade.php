@@ -1,4 +1,3 @@
-
 @extends('Layouts.MainAdmin')
 
 @section('Container')
@@ -13,7 +12,6 @@
             @if( auth()->user()->id_artist==="" )
 
             <select type="text" class="form-control @error('category') is-invalid @enderror" id="floatingCategory" placeholder="Category" name="id_user" required>
-                <option name="id_user" value="">--Select--</option>
                 @forelse($users as $cp)
                 <option name="id_user" value="{{ $cp->id_artist }}"> {{ $cp->name }} {{  $cp->id_artist  }} {{  $cp->status  }}</option>
                 @empty
@@ -54,6 +52,7 @@
             <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Gambar Album</label>
             <input type="file" class="form-control" id="email" name="cover" aria-describedby="emailHelp" required >
+            <label for="exampleInputEmail1" class="form-label">Catatan ukuran gambar tidak melebihi 2 mb</label>
             </div>
             @endif
 
