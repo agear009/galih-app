@@ -18,9 +18,22 @@
                 <input type="text" class="form-control" id="phone" name="artist" aria-describedby="phone" required value="{{ $Artist->artist }}">
                 </div>
                 <div class="mb-3">
-                <label for="exampleInputphone1" class="form-label">Album</label>
-                <input type="text" class="form-control" id="phone" name="album" aria-describedby="phone" required value="{{ $Artist->album }}">
-                </div>
+                    <label for="exampleInputphone1" class="form-label">Album</label>
+                    <select type="text" class="form-control @error('category') is-invalid @enderror" id="floatingCategory" placeholder="Category" name="album" required>
+                        <option name="album" value="{{ $Artist->album }}">{{ $Artist->album }}</option>
+                        @forelse($Albums as $album)
+                        <option name="album" value="{{ $album->id }}">{{  $album->nameAlbum }}</option>
+                        @empty
+
+                        @endforelse
+
+
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label"><img src="{{ asset('storage/CoverArtists/'.$Artist->cover_artis) }}" width="20%"></label>
+                        <input type="file" class="form-control" id="email" name="cover_artis" aria-describedby="emailHelp" required >
+                        </div>
                 <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Lagu</label>
                 <input type="text" class="form-control" id="email" name="song" aria-describedby="emailHelp" required value="{{ $Artist->song }}">

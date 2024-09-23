@@ -7,7 +7,7 @@
 
       <a href="index.html" class="logo d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/post/assets/img/logo.png" alt=""> -->
+        <!-- <img src="assets/post/assets/img/logo.ico" alt=""> -->
         <h1 class="sitename">sdgmusik</h1>
       </a>
 

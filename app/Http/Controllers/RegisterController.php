@@ -55,6 +55,7 @@ class RegisterController extends Controller
             'id_user'=>$code,
             'artist'=>$request->artist,
             'album'=>'belum terdapat album',
+            'cover_artis'=>'belum ada cover',
             'song'=>$request->song,
             'pencipta_lagu'=>'belum terdapat pencipta_lagu',
             'tentang_artis'=>'belum terdapat tentang_artis',

@@ -13,6 +13,7 @@ class Artis extends Model
         'id_user',
         'artist',
         'album',
+        'cover_artis',
         'song',
         'pencipta_lagu',
         'tentang_artis',

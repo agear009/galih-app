@@ -25,4 +25,5 @@ class IndexController extends Controller
     public function Admin(){
         return view('Admin.Index',["title"=>"Admin","active"=>"Home"]);
     }
+
 }

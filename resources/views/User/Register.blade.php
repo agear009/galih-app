@@ -21,7 +21,7 @@
             <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Level</label>
             <select class="form-control" id="level_user" name="level_user" >
-            <option class="form-control" id="level_user" name="level_user" value="karyawan">Karyawan</option>
+            <option class="form-control" id="level_user" name="level_user" value="Karyawan">Karyawan</option>
             <option class="form-control" id="level_user" name="level_user" value="Anggota">Anggota</option>
             <option class="form-control" id="level_user" name="level_user" value="Pendaftar">Pendaftar</option>
             </select>

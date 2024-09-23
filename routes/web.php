@@ -6,11 +6,13 @@ use App\Http\Controllers\PostNewsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CoverArtistController;
 use App\Http\Controllers\EditNewUserController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\CopywriteController;
 use App\Http\Controllers\ContentController;
+use App\Models\CoverArtist;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +27,7 @@ use App\Http\Controllers\ContentController;
 
 //Route::get('/',[IndexController::class,'index']);
 Route::get('/',[PostNewsController::class,'index']);
+Route::get('/artistpage',[CoverArtistController::class,'index']);
 Route::get('/index',[PostNewsController::class,'index']);
 Route::get('/profile',[IndexController::class,'profile']);
 Route::get('/product',[IndexController::class,'product']);
@@ -48,6 +51,7 @@ Route::resource('/users',\App\Http\Controllers\UserController::class);
 Route::resource('/artist',\App\Http\Controllers\AgregatorController::class);
 Route::resource('/member',\App\Http\Controllers\AgregatorMemberController::class);
 Route::resource('/album',\App\Http\Controllers\AlbumController::class);
+Route::resource('/coverArtist',\App\Http\Controllers\CoverArtistController::class);
 Route::resource('/category',\App\Http\Controllers\CategoryController::class);
 Route::resource('/post',\App\Http\Controllers\PostController::class);
 Route::resource('/products',\App\Http\Controllers\ProductController::class);

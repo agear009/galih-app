@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 // return type redirect respone
 use Illuminate\Http\RedirectResponse;
-
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Album;
 use App\Models\Artis;
+use App\Models\CoverArtist;
 
 class AgregatorController extends Controller
 {
@@ -22,14 +23,16 @@ class AgregatorController extends Controller
         $Artist=$modelbanner->getListArtis();
         $users=user::all();
         $Art=artis::all();
-        return View('Agregator.Index',["title"=>"Agregator","active"=>"Home"],compact('Artist','users','no','Art'));
+        $Cover=CoverArtist::all();
+        return View('Agregator.Index',["title"=>"Agregator","active"=>"Home"],compact('Artist','users','no','Art','Cover'));
     }
     public function create(Request $id_users):view
     {
         //$user=user::FindOrFail($id_users);
         $users=user::all();
-        $albums=album::all();
-        return View('Agregator.Create',["title"=>"Creat Artist","active"=>"Home"], compact('users','albums'));
+        $Albums=album::all();
+        $Cover=CoverArtist::all();
+        return View('Agregator.Create',["title"=>"Creat Artist","active"=>"Home"], compact('users','Albums','Cover'));
 
 
     }
@@ -43,30 +46,33 @@ class AgregatorController extends Controller
         'song' =>'required|max:255'
 
     ]);
-        //dd($request);
-        artis::create([
-            'id_user'=>$request->id_user,
-            'artist'=>$request->artist,
-            'album'=>$request->album,
-            'song'=>$request->song,
-            'pencipta_lagu'=>$request->pencipta_lagu,
-            'tentang_artis'=>$request->tentang_artis,
-            'lirik'=>$request->lirik,
-            'keterangan_lagu'=>$request->keterangan_lagu,
-            'facebook'=>$request->facebook,
-            'x'=>$request->x,
-            'youtube'=>$request->youtube,
-            'instagram'=>$request->instagram,
-            'apple'=>$request->apple,
-            'spotify'=>$request->spotify,
-            'tiktok'=>$request->tiktok,
-            'joox'=>$request->joox,
-            'tidal'=>$request->tidal
-        ]);
-        return redirect('/artist')->with('success','Registration user successfull! ');
 
+    $cover=$request->file('cover_artis');
+    $cover-> storeAs('public/CoverArtists', $cover->hashName());
 
+    artis::create([
+        'id_user'=>$request->id_user,
+        'artist'=>$request->artist,
+        'album'=>$request->album,
+        'cover_artis'=>$cover->hashName(),
+        'song'=>$request->song,
+        'pencipta_lagu'=>$request->pencipta_lagu,
+        'tentang_artis'=>$request->tentang_artis,
+        'lirik'=>$request->lirik,
+        'keterangan_lagu'=>$request->keterangan_lagu,
+        'facebook'=>$request->facebook,
+        'x'=>$request->x,
+        'youtube'=>$request->youtube,
+        'instagram'=>$request->instagram,
+        'apple'=>$request->apple,
+        'spotify'=>$request->spotify,
+        'tiktok'=>$request->tiktok,
+        'joox'=>$request->joox,
+        'tidal'=>$request->tidal
 
+           ]);
+    //redirect to index
+    return redirect('/artist')->with('success','Registration user successfull! ');
 
     }
 
@@ -76,10 +82,11 @@ public function edit(string $id):View
     //dd($id_artist);
     //get member by id
     $Artist=artis::findOrFail($id);
+    $Albums=album::all();
     //$Artist=Artis::where($id);
   // dd($id_artist);
    // exit;
-    return view('Agregator.Edit',["title"=>"Artis","active"=>"User"], compact('Artist'));
+    return view('Agregator.Edit',["title"=>"Artis","active"=>"User"], compact('Artist','Albums'));
 
 }
 
@@ -95,10 +102,46 @@ public function update(Request $request, $id): RedirectResponse
     ]);
     //get member by id
     $artis=artis::FindOrFail($id);
-        //dd($request);
+
+    if($request->hasFile('cover_artis'))
+    {
+        //upload new image
+        $cover=$request->file('cover_artis');
+
+        $cover->storeAs('public/CoverArtists',$cover->hashName());
+
+
+        //delete old image
+        Storage::delete('public/CoverArtists/'.$artis->cover_artis);
+
+        //update album with new image
         $artis->update([
+            'id_user'=>$request->id_user,
+            'artist'=>$request->artist,
+            'album'=>$request->album,
+            'cover_artis'=>$cover->hashName(),
+            'song'=>$request->song,
+            'pencipta_lagu'=>$request->pencipta_lagu,
+            'tentang_artis'=>$request->tentang_artis,
+            'lirik'=>$request->lirik,
+            'keterangan_lagu'=>$request->keterangan_lagu,
+            'facebook'=>$request->facebook,
+            'x'=>$request->x,
+            'youtube'=>$request->youtube,
+            'instagram'=>$request->instagram,
+            'apple'=>$request->apple,
+            'spotify'=>$request->spotify,
+            'tiktok'=>$request->tiktok,
+            'joox'=>$request->joox,
+            'tidal'=>$request->tidal
 
+        ]);
 
+    }
+
+    else
+    {
+        $artis->update([
             'id_user'=>$request->id_user,
             'artist'=>$request->artist,
             'album'=>$request->album,
@@ -116,7 +159,10 @@ public function update(Request $request, $id): RedirectResponse
             'tiktok'=>$request->tiktok,
             'joox'=>$request->joox,
             'tidal'=>$request->tidal
-            ]);
+
+        ]);
+
+    }
             return redirect('/artist')->with('success','sudah dirubah ');
 
 
@@ -128,7 +174,7 @@ public function destroy($id): RedirectResponse
         $artist=Artis::findOrFail($id);
 
         //delete image
-
+        Storage::delete('public/CoverArtists/'. $artist->cover_artis);
 
 
         // delete member

@@ -159,8 +159,8 @@
 
           <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
             <li data-filter="*" class="filter-active">Semua</li>
-            @forelse($Artist as $artis)
-            <li data-filter=".filter-{{ $artis->album }}">{{ $artis->artist }}</li>
+            @forelse($Albums as $album)
+            <li data-filter=".filter-{{ $album->id }}">{{ $album->nameAlbum }}</li>
             @empty
                 <div class="alert alert-danger">
                     Data tidak ditemukan.
@@ -194,6 +194,58 @@
       </div>
 
     </section><!-- /Portfolio Section -->
+
+
+    <!-- Artist Section -->
+    <section id="portfolio" class="portfolio section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Pengguna Jasa Kami</h2>
+        <p>Daftar penyanyi dan album</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">Semua</li>
+            @forelse($Albums as $album)
+            <li data-filter=".filter-{{ $album->id }}">{{ $album->nameAlbum }}</li>
+            @empty
+                <div class="alert alert-danger">
+                    Data tidak ditemukan.
+                </div>
+            @endforelse
+
+          </ul><!-- End Portfolio Filters -->
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            @forelse($Artist as $artis)
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-{{ $artis->id }}">
+                <img src="{{ asset('storage/albums/'.$artis->cover) }}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>{{ $artis->song }}</h4>
+                  <p>{{ $artis->artist }}</p>
+                  <a href="{{ asset('storage/albums/'.$artis->cover) }}" title="{{ $artis->NameAlbum }}" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="/artistpage{{ $artis->id }}" title="Lihat Lebih" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div><!-- End Portfolio Item -->
+            @empty
+                <div class="alert alert-danger">
+                    Data tidak ditemukan.
+                </div>
+            @endforelse
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Artist Section -->
 
 
       <!-- Stats Section -->

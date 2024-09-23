@@ -14,7 +14,7 @@
                     <th scope="col">Nama Artis</th>
                     <th scope="col">Lagu</th>
                     <th scope="col">User ID</th>
-                    <th scope="col">User kode</th>
+                    <th scope="col">Cover lagu</th>
 
                     <th scope="col">Menu</th>
                 </tr>
@@ -24,11 +24,11 @@
 
 
                 <tr>
-                    <th scope="row" width="">{{ $no++ }}</th>
-                    <th scope="col" width="">{{ $artis->artist }}</th>
-                    <th scope="col" width="">{{ $artis->song }}</th>
-                    <th scope="col" width="">{{ $artis->id_user }}</th>
-                    <th scope="col" width="">{{ $artis->id_users}}</th>
+                    <th scope="row" width="10%">{{ $no++ }}</th>
+                    <th scope="col" width="20%">{{ $artis->artist }}</th>
+                    <th scope="col" width="20%">{{ $artis->song }}</th>
+                    <th scope="col" width="20%">{{ $artis->album }}</th>
+                    <th scope="col" width="20%"><img src="{{ asset('storage/CoverArtists/'.$artis->cover_artis) }}" width="20%"></th>
 
                     <td width="150px">
 
