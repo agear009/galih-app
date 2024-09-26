@@ -27,7 +27,7 @@ use App\Models\CoverArtist;
 
 //Route::get('/',[IndexController::class,'index']);
 Route::get('/',[PostNewsController::class,'index']);
-Route::get('/artistpage',[CoverArtistController::class,'index']);
+Route::get('/artistpage',[CoverArtistController::class,'show']);
 Route::get('/index',[PostNewsController::class,'index']);
 Route::get('/profile',[IndexController::class,'profile']);
 Route::get('/product',[IndexController::class,'product']);

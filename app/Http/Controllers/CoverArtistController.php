@@ -76,12 +76,13 @@ class CoverArtistController extends Controller
         /**
          * Display the specified resource.
          */
-        public function show($id)
+        public function show(request $id)
         {
             //$CoverArtist=CoverArtist::where('product_id','=',$id)->get();
-            $modelCoverArtistById = new CoverArtist;
-            $CoverArtist=$modelCoverArtistById->getListCoverArtistsById($id);
-            return view('CoverArtist.Show',["title"=>"CoverArtist","active"=>"CoverArtist"],compact('CoverArtist'));
+            //$modelCoverArtistById = new CoverArtist;
+            //$CoverArtist=$modelCoverArtistById->getListCoverArtistsById($id);
+            $Artist=artis::findOrFail($id);
+            return view('Index.ArtistPage',["title"=>"CoverArtist","active"=>"CoverArtist"],compact('Artist'));
         }
 
         /**

@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" href="assets/HalamanArtis/img/favicon.png" type="image/png">
-        <title>Ronin Multi</title>
+        <title>Saamparan Digital Group</title>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="assets/HalamanArtis/css/bootstrap.css">
         <link rel="stylesheet" href="assets/HalamanArtis/vendors/linericon/style.css">
@@ -20,7 +20,6 @@
         <link rel="stylesheet" href="assets/HalamanArtis/css/responsive.css">
     </head>
     <body>
-
         <!--================Header Menu Area =================-->
         <header class="header_area">
             <div class="main_menu" id="mainNav">
@@ -70,14 +69,14 @@
 					<div class="row">
 						<div class="col-lg-6">
 							<div class="home_left_img">
-								<img src="assets/HalamanArtis/img/banner/home-left-1.png" alt="">
+								<img src=" {{ asset('storage/CoverArtists/'.$Artist->cover_artis) }} " alt="">
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="banner_content">
 								<h5>This is me</h5>
-								<h2>Travor James</h2>
-								<p>You will begin to realise why this exercise is called the Dickens Pattern (with reference to the ghost showing Scrooge some different futures)</p>
+								<h2>{{ $Artist->artist }}</h2>
+								<p>You will begin to realise why this exercise is called the Dickens Pattern (with reference to the ghost showing Scrooge some different futures) </p>
 								<a class="banner_btn" href="#">Discover Now</a>
 							</div>
 						</div>
