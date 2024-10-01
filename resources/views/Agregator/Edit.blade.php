@@ -33,7 +33,7 @@
 
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label"><img src="{{ asset('storage/CoverArtists/'.$Artist->cover_artis) }}" width="20%"></label>
-                    <input type="file" class="form-control" id="email" name="cover_artis" aria-describedby="emailHelp" required >
+                    <input type="file" class="form-control" id="email" name="cover_artis" aria-describedby="emailHelp" >
                     </div>
                 <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Lagu</label>

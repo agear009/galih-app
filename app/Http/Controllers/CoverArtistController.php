@@ -76,7 +76,7 @@ class CoverArtistController extends Controller
         /**
          * Display the specified resource.
          */
-        public function show(request $id)
+        public function show($id)
         {
             //$CoverArtist=CoverArtist::where('product_id','=',$id)->get();
             //$modelCoverArtistById = new CoverArtist;

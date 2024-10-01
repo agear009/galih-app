@@ -230,7 +230,7 @@
                         <h4>{{ $artis->song }}</h4>
                         <p>{{ $artis->artist }}</p>
                         <a href="{{ asset('storage/CoverArtists/'.$artis->cover_artis) }}" title="{{ $artis->song }}" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                        <a href="artistpage?id={{ $artis->id }}" title="Lihat Lebih" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                        <a href="{{ route('artistpage.show',$artis->id) }}" title="Lihat Lebih" class="details-link" target="blank"><i class="bi bi-link-45deg"></i></a>
                         </div>
                     </div><!-- End Portfolio Item -->
                     @empty

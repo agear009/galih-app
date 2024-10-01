@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 16 Sep 2024 pada 15.44
+-- Waktu pembuatan: 26 Sep 2024 pada 18.13
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -41,7 +41,8 @@ CREATE TABLE `albums` (
 --
 
 INSERT INTO `albums` (`id`, `id_user`, `nameAlbum`, `cover`, `created_at`, `updated_at`) VALUES
-(5, '20240916025247', 'kita bisa', 'hE8ztJnN9slfdA2e3Svzlqu1ttYFfsfMMEmAlwJU.png', '2024-09-16 05:28:35', '2024-09-16 05:33:07');
+(5, '20240916025247', 'kita bisa', 'YwcTl29ZQ7kJdfgeeqBRzKMPvQ9gCDnGMrogx9OI.jpg', '2024-09-16 05:28:35', '2024-09-23 06:38:17'),
+(6, '20240916025247', 'kita bisa 2', 'yAsIFnWijVRTjjKBrRBaLerpfcp1lDbYnyyJjf4B.webp', '2024-09-19 07:52:56', '2024-09-23 06:38:31');
 
 -- --------------------------------------------------------
 
@@ -54,6 +55,7 @@ CREATE TABLE `artis` (
   `id_user` varchar(255) NOT NULL,
   `artist` varchar(255) NOT NULL,
   `album` varchar(255) NOT NULL,
+  `cover_artis` varchar(255) NOT NULL,
   `song` varchar(255) NOT NULL,
   `pencipta_lagu` varchar(255) NOT NULL,
   `tentang_artis` text NOT NULL,
@@ -76,15 +78,9 @@ CREATE TABLE `artis` (
 -- Dumping data untuk tabel `artis`
 --
 
-INSERT INTO `artis` (`id`, `id_user`, `artist`, `album`, `song`, `pencipta_lagu`, `tentang_artis`, `lirik`, `keterangan_lagu`, `facebook`, `x`, `youtube`, `instagram`, `apple`, `spotify`, `tiktok`, `joox`, `tidal`, `created_at`, `updated_at`) VALUES
-(1, '20240820014938', 'sina', '', 'yang terlupakan', '', 'belum terdapat cover', '', '', '', '', '', '', '', '', '', '', '', '2024-08-20 06:49:38', '2024-08-30 02:27:36'),
-(2, '20240916024646', 'andre', '', 'yang terlupakan itu aku', '', 'belum terdapat cover', '', '', '', '', '', '', '', '', '', '', '', '2024-09-15 19:46:47', '2024-09-15 19:46:47'),
-(3, '20240916025247', 'andre', '', 'yang terlupakan', '', 'belum terdapat cover', '', '', '', '', '', '', '', '', '', '', '', '2024-09-15 19:52:48', '2024-09-15 19:52:48'),
-(4, '20240916045626', 'sina', '', 'bertahan tanpamu', '', 'belum terdapat cover', '', '', '', '', '', '', '', '', '', '', '', '2024-09-15 21:56:26', '2024-09-15 21:56:26'),
-(5, '20240916070653', 'lukman', 'belum terdapat album', 'kami', 'belum terdapat pencipta_lagu', 'belum terdapat tentang_artis', 'belum terdapat lirik', 'belum terdapat keterangan_lagu', '#', '#', '#', '#', '#', '#', '', '#', '#', '2024-09-16 00:06:53', '2024-09-16 00:06:53'),
-(6, '20240916025247', 'sina1', 'diami1', 'diami1', 'sina1', '<p><strong>Musik</strong>&nbsp;ditemukan di setiap budaya, baik masa lalu maupun masa kini, menyesuaikan antara waktu dan tempat. Karena semua orang di dunia, termasuk kelompok suku yang paling terisolasi pun memiliki&nbsp;<a title=\"Bentuk musik\" href=\"https://id.wikipedia.org/wiki/Bentuk_musik\">bentuk musik</a>, dapat disimpulkan bahwa musik mungkin telah hadir di leluhur manusia sebelum penyebaran manusia di seluruh dunia. Akibatnya, musik mungkin telah ada selama setidaknya 55,000 tahun dan musik pertama mungkin telah ada di Afrika dan kemudian berkembang menjadi bagian dasar dari kehidupan manusia1</p>', '<p><strong>Musik</strong>&nbsp;ditemukan di setiap budaya, baik masa lalu maupun masa kini, menyesuaikan antara waktu dan tempat. Karena semua orang di dunia, termasuk kelompok suku yang paling terisolasi pun memiliki&nbsp;<a title=\"Bentuk musik\" href=\"https://id.wikipedia.org/wiki/Bentuk_musik\">bentuk musik</a>, dapat disimpulkan bahwa musik mungkin telah hadir di leluhur manusia sebelum penyebaran manusia di seluruh dunia. Akibatnya, musik mungkin telah ada selama setidaknya 55,000 tahun dan musik pertama mungkin telah ada di Afrika dan kemudian berkembang menjadi bagian dasar dari kehidupan manusia1</p>', '<p><strong>Musik</strong>&nbsp;ditemukan di setiap budaya, baik masa lalu maupun masa kini, menyesuaikan antara waktu dan tempat. Karena semua orang di dunia, termasuk kelompok suku yang paling terisolasi pun memiliki&nbsp;<a title=\"Bentuk musik\" href=\"https://id.wikipedia.org/wiki/Bentuk_musik\">bentuk musik</a>, dapat disimpulkan bahwa musik mungkin telah hadir di leluhur manusia sebelum penyebaran manusia di seluruh dunia. Akibatnya, musik mungkin telah ada selama setidaknya 55,000 tahun dan musik pertama mungkin telah ada di Afrika dan kemudian berkembang menjadi bagian dasar dari kehidupan manusia1</p>', '#1', '#1', '#1', '#1', '#1', '#1', 'tiktok1', '#1', '#1', '2024-09-16 00:27:47', '2024-09-16 01:05:35'),
-(7, '20240916025247', 'sina', 'aku', 'diami', 'sina', '<p><strong>Musik</strong>&nbsp;ditemukan di setiap budaya, baik masa lalu maupun masa kini, menyesuaikan antara waktu dan tempat. Karena semua orang di dunia, termasuk kelompok suku yang paling terisolasi pun memiliki&nbsp;<a title=\"Bentuk musik\" href=\"https://id.wikipedia.org/wiki/Bentuk_musik\">bentuk musik</a>, dapat disimpulkan bahwa musik mungkin telah hadir di leluhur manusia sebelum penyebaran manusia di seluruh dunia. Akibatnya, musik mungkin telah ada selama setidaknya 55,000 tahun dan musik pertama mungkin telah ada di Afrika dan kemudian berkembang menjadi bagian dasar dari kehidupan manusia</p>', '<p><strong>Musik</strong>&nbsp;ditemukan di setiap budaya, baik masa lalu maupun masa kini, menyesuaikan antara waktu dan tempat. Karena semua orang di dunia, termasuk kelompok suku yang paling terisolasi pun memiliki&nbsp;<a title=\"Bentuk musik\" href=\"https://id.wikipedia.org/wiki/Bentuk_musik\">bentuk musik</a>, dapat disimpulkan bahwa musik mungkin telah hadir di leluhur manusia sebelum penyebaran manusia di seluruh dunia. Akibatnya, musik mungkin telah ada selama setidaknya 55,000 tahun dan musik pertama mungkin telah ada di Afrika dan kemudian berkembang menjadi bagian dasar dari kehidupan manusia</p>', '<p><strong>Musik</strong>&nbsp;ditemukan di setiap budaya, baik masa lalu maupun masa kini, menyesuaikan antara waktu dan tempat. Karena semua orang di dunia, termasuk kelompok suku yang paling terisolasi pun memiliki&nbsp;<a title=\"Bentuk musik\" href=\"https://id.wikipedia.org/wiki/Bentuk_musik\">bentuk musik</a>, dapat disimpulkan bahwa musik mungkin telah hadir di leluhur manusia sebelum penyebaran manusia di seluruh dunia. Akibatnya, musik mungkin telah ada selama setidaknya 55,000 tahun dan musik pertama mungkin telah ada di Afrika dan kemudian berkembang menjadi bagian dasar dari kehidupan manusia</p>', '#', '#', '#', '#', '#', '#', '#', '#', '#', '2024-09-16 01:04:59', '2024-09-16 01:04:59'),
-(8, '20240916080512', 'lala', 'belum terdapat album', 'bidadari', 'belum terdapat pencipta_lagu', 'belum terdapat tentang_artis', 'belum terdapat lirik', 'belum terdapat keterangan_lagu', '#', '#', '#', '#', '#', '#', '#', '#', '#', '2024-09-16 01:05:13', '2024-09-16 01:05:13');
+INSERT INTO `artis` (`id`, `id_user`, `artist`, `album`, `cover_artis`, `song`, `pencipta_lagu`, `tentang_artis`, `lirik`, `keterangan_lagu`, `facebook`, `x`, `youtube`, `instagram`, `apple`, `spotify`, `tiktok`, `joox`, `tidal`, `created_at`, `updated_at`) VALUES
+(12, '1234', 'justin', '5', 'nSgP2MpD7bDT9IUZvAf4WqBCjiIplnydvERT96KL.jpg', 'belive', 'justin', '<p>p</p>', '<p>p</p>', '<p>p</p>', '#', '#', '#', '#', '#', '#', '#', '#', '#', '2024-09-23 08:33:09', '2024-09-23 08:33:09'),
+(13, '20240923035725', 'lili', 'belum terdapat album', 'peRBaE9BVTOMyizjVhl3MUcrTogTEDutuG2ZSByH.jpg', 'kau selalu diam', 'belum terdapat pencipta_lagu', '<p>belum terdapat tentang_artis</p>', '<p>belum terdapat lirik</p>', '<p>belum terdapat keterangan_lagu</p>', '#', '#', '#', '#', '#', '#', '#', '#', '#', '2024-09-23 08:57:26', '2024-09-24 06:51:07');
 
 -- --------------------------------------------------------
 
@@ -178,6 +174,30 @@ CREATE TABLE `copywrites` (
 
 INSERT INTO `copywrites` (`id`, `headline`, `masalah`, `solusi`, `manfaat`, `bonus`, `kontak`, `kelangkaan`, `kerugian`, `created_at`, `updated_at`) VALUES
 (1, 'kemeja terbaik', '<div class=\"css-uqawib\">\r\n<h1 class=\"css-7mvqif\">10 Rekomendasi Kemeja Putih Polos untuk Pria Terbaik</h1>\r\n</div>\r\n<div class=\"css-kbm1t2\">\r\n<div class=\"css-z4d070\">\r\n<p>Kemeja putih polos menjadi salah satu&nbsp;<em>fashion item</em>&nbsp;esensial yang sebaiknya dimiliki oleh pria. Warnanya yang netral membuatnya mudah dipadukan dengan&nbsp;<em>outfit&nbsp;</em>lain sehingga tercipta beragam gaya, mulai dari kasual hingga formal. Saat ini, ada banyak merek kemeja putih pria yang bisa dijadikan pilihan, misalnya BOSS, Benhill, Erigo, serta&nbsp;FortKlass.</p>\r\n<br>\r\n<p>Apabila Anda sedang mencari rekomendasi kemeja putih pria<em>&nbsp;branded</em> yang bagus, kami memiliki rekomendasi produk terbaik. Tak hanya itu, kami juga akan memberikan tips memilih kemeja putih polos supaya Anda mendapatkan produk yang sesuai kebutuhan. Yuk, simak selengkapnya!</p>\r\n</div>\r\n</div>', '<div class=\"css-uqawib\">\r\n<h1 class=\"css-7mvqif\">10 Rekomendasi Kemeja Putih Polos untuk Pria Terbaik</h1>\r\n</div>\r\n<div class=\"css-kbm1t2\">\r\n<div class=\"css-z4d070\">\r\n<p>Kemeja putih polos menjadi salah satu&nbsp;<em>fashion item</em>&nbsp;esensial yang sebaiknya dimiliki oleh pria. Warnanya yang netral membuatnya mudah dipadukan dengan&nbsp;<em>outfit&nbsp;</em>lain sehingga tercipta beragam gaya, mulai dari kasual hingga formal. Saat ini, ada banyak merek kemeja putih pria yang bisa dijadikan pilihan, misalnya BOSS, Benhill, Erigo, serta&nbsp;FortKlass.</p>\r\n<br>\r\n<p>Apabila Anda sedang mencari rekomendasi kemeja putih pria<em>&nbsp;branded</em> yang bagus, kami memiliki rekomendasi produk terbaik. Tak hanya itu, kami juga akan memberikan tips memilih kemeja putih polos supaya Anda mendapatkan produk yang sesuai kebutuhan. Yuk, simak selengkapnya!</p>\r\n</div>\r\n</div>', '<div class=\"css-uqawib\">\r\n<h1 class=\"css-7mvqif\">10 Rekomendasi Kemeja Putih Polos untuk Pria Terbaik</h1>\r\n</div>\r\n<div class=\"css-kbm1t2\">\r\n<div class=\"css-z4d070\">\r\n<p>Kemeja putih polos menjadi salah satu&nbsp;<em>fashion item</em>&nbsp;esensial yang sebaiknya dimiliki oleh pria. Warnanya yang netral membuatnya mudah dipadukan dengan&nbsp;<em>outfit&nbsp;</em>lain sehingga tercipta beragam gaya, mulai dari kasual hingga formal. Saat ini, ada banyak merek kemeja putih pria yang bisa dijadikan pilihan, misalnya BOSS, Benhill, Erigo, serta&nbsp;FortKlass.</p>\r\n<br>\r\n<p>Apabila Anda sedang mencari rekomendasi kemeja putih pria<em>&nbsp;branded</em> yang bagus, kami memiliki rekomendasi produk terbaik. Tak hanya itu, kami juga akan memberikan tips memilih kemeja putih polos supaya Anda mendapatkan produk yang sesuai kebutuhan. Yuk, simak selengkapnya!</p>\r\n</div>\r\n</div>', '<div class=\"css-uqawib\">\r\n<h1 class=\"css-7mvqif\">10 Rekomendasi Kemeja Putih Polos untuk Pria Terbaik</h1>\r\n</div>\r\n<div class=\"css-kbm1t2\">\r\n<div class=\"css-z4d070\">\r\n<p>Kemeja putih polos menjadi salah satu&nbsp;<em>fashion item</em>&nbsp;esensial yang sebaiknya dimiliki oleh pria. Warnanya yang netral membuatnya mudah dipadukan dengan&nbsp;<em>outfit&nbsp;</em>lain sehingga tercipta beragam gaya, mulai dari kasual hingga formal. Saat ini, ada banyak merek kemeja putih pria yang bisa dijadikan pilihan, misalnya BOSS, Benhill, Erigo, serta&nbsp;FortKlass.</p>\r\n<br>\r\n<p>Apabila Anda sedang mencari rekomendasi kemeja putih pria<em>&nbsp;branded</em> yang bagus, kami memiliki rekomendasi produk terbaik. Tak hanya itu, kami juga akan memberikan tips memilih kemeja putih polos supaya Anda mendapatkan produk yang sesuai kebutuhan. Yuk, simak selengkapnya!</p>\r\n</div>\r\n</div>', '<div class=\"css-uqawib\">\r\n<h1 class=\"css-7mvqif\">10 Rekomendasi Kemeja Putih Polos untuk Pria Terbaik</h1>\r\n</div>\r\n<div class=\"css-kbm1t2\">\r\n<div class=\"css-z4d070\">\r\n<p>Kemeja putih polos menjadi salah satu&nbsp;<em>fashion item</em>&nbsp;esensial yang sebaiknya dimiliki oleh pria. Warnanya yang netral membuatnya mudah dipadukan dengan&nbsp;<em>outfit&nbsp;</em>lain sehingga tercipta beragam gaya, mulai dari kasual hingga formal. Saat ini, ada banyak merek kemeja putih pria yang bisa dijadikan pilihan, misalnya BOSS, Benhill, Erigo, serta&nbsp;FortKlass.</p>\r\n<br>\r\n<p>Apabila Anda sedang mencari rekomendasi kemeja putih pria<em>&nbsp;branded</em> yang bagus, kami memiliki rekomendasi produk terbaik. Tak hanya itu, kami juga akan memberikan tips memilih kemeja putih polos supaya Anda mendapatkan produk yang sesuai kebutuhan. Yuk, simak selengkapnya!</p>\r\n</div>\r\n</div>', '<div class=\"css-uqawib\">\r\n<h1 class=\"css-7mvqif\">10 Rekomendasi Kemeja Putih Polos untuk Pria Terbaik</h1>\r\n</div>\r\n<div class=\"css-kbm1t2\">\r\n<div class=\"css-z4d070\">\r\n<p>Kemeja putih polos menjadi salah satu&nbsp;<em>fashion item</em>&nbsp;esensial yang sebaiknya dimiliki oleh pria. Warnanya yang netral membuatnya mudah dipadukan dengan&nbsp;<em>outfit&nbsp;</em>lain sehingga tercipta beragam gaya, mulai dari kasual hingga formal. Saat ini, ada banyak merek kemeja putih pria yang bisa dijadikan pilihan, misalnya BOSS, Benhill, Erigo, serta&nbsp;FortKlass.</p>\r\n<br>\r\n<p>Apabila Anda sedang mencari rekomendasi kemeja putih pria<em>&nbsp;branded</em> yang bagus, kami memiliki rekomendasi produk terbaik. Tak hanya itu, kami juga akan memberikan tips memilih kemeja putih polos supaya Anda mendapatkan produk yang sesuai kebutuhan. Yuk, simak selengkapnya!</p>\r\n</div>\r\n</div>', '<div class=\"css-uqawib\">\r\n<h1 class=\"css-7mvqif\">10 Rekomendasi Kemeja Putih Polos untuk Pria Terbaik</h1>\r\n</div>\r\n<div class=\"css-kbm1t2\">\r\n<div class=\"css-z4d070\">\r\n<p>Kemeja putih polos menjadi salah satu&nbsp;<em>fashion item</em>&nbsp;esensial yang sebaiknya dimiliki oleh pria. Warnanya yang netral membuatnya mudah dipadukan dengan&nbsp;<em>outfit&nbsp;</em>lain sehingga tercipta beragam gaya, mulai dari kasual hingga formal. Saat ini, ada banyak merek kemeja putih pria yang bisa dijadikan pilihan, misalnya BOSS, Benhill, Erigo, serta&nbsp;FortKlass.</p>\r\n<br>\r\n<p>Apabila Anda sedang mencari rekomendasi kemeja putih pria<em>&nbsp;branded</em> yang bagus, kami memiliki rekomendasi produk terbaik. Tak hanya itu, kami juga akan memberikan tips memilih kemeja putih polos supaya Anda mendapatkan produk yang sesuai kebutuhan. Yuk, simak selengkapnya!</p>\r\n</div>\r\n</div>', '2024-03-13 06:58:09', '2024-03-13 06:58:09');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `cover_artists`
+--
+
+CREATE TABLE `cover_artists` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `id_user` varchar(255) NOT NULL,
+  `id_artist` varchar(255) NOT NULL,
+  `nameCoverArtist` varchar(255) NOT NULL,
+  `cover` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `cover_artists`
+--
+
+INSERT INTO `cover_artists` (`id`, `id_user`, `id_artist`, `nameCoverArtist`, `cover`, `created_at`, `updated_at`) VALUES
+(2, '1234', '1234', 'cover yang terlupakan', 'LWPJRNvfQ3e6is39RspnwVuDAuQnrJMGHlLB9br7.png', '2024-09-22 01:35:18', '2024-09-22 01:35:18'),
+(3, '1234', '1234', 'kisah 1', 'KbC74ncy91WqLDsz1U7leSCmQp5eYUY9bTnIZzsd.png', '2024-09-23 06:43:19', '2024-09-23 06:43:19');
 
 -- --------------------------------------------------------
 
@@ -284,7 +304,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (11, '2024_03_10_132018_create_banners_table', 1),
 (12, '2024_07_28_130440_create_posts_table', 2),
 (13, '2024_08_17_032049_create_artis_table', 3),
-(14, '2024_09_16_035426_create_albums_table', 4);
+(14, '2024_09_16_035426_create_albums_table', 4),
+(15, '2024_09_21_113825_create_cover_artists_table', 5);
 
 -- --------------------------------------------------------
 
@@ -429,10 +450,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `phone`, `email`, `level_user`, `address`, `status`, `email_verified_at`, `password`, `id_artist`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'ega', '0811204409', 'galihandroid009@gmail.com', '', 'Jl. Siliwangi', '', NULL, '$2y$12$QB4ySAvzLlZQq0ywB9rxl.g.ieERKDJ.iy8/aCZiB/tfRvARUIDYy', '', NULL, '2024-03-12 02:05:46', '2024-03-12 02:05:46'),
-(8, 'andi', '08773434321', 'andi@gmail.com', 'Anggota', 'Jl. Perjuangan 1 no. 274 RT 004 RW 003', 'Aktif', NULL, '$2y$12$480cSEjQV7Y4.5yACg97jOFq3sKVV8ff5Ntr6ySdklNgJiqoLih9O', '20240916025247', NULL, '2024-09-15 19:52:47', '2024-09-15 20:12:38'),
-(9, 'riri', '087347374734', 'riri@gmail.com', 'Belum ada', 'Jl.bertahan 1 no. 274 RT 004 RW 003', 'pendaftar', NULL, '$2y$12$3dxdH8JXUqpHMo4938UvbeBMoxI4o57eBltDcbB8tMgrIBw2LEoZ.', '20240916045626', NULL, '2024-09-15 21:56:26', '2024-09-15 21:56:26'),
-(10, 'jenal', '08112236791', 'jenal@gmail.com', 'Belum ada', 'Jl Siliwangi 1 No 274  RT 003 / RW004 kel. Maleber', 'pendaftar', NULL, '$2y$12$c3AnnJuEOgBoLfV9jUiuvOY5u2L2a2ki4gKLAy1BDsDRd522L799G', '20240916070653', NULL, '2024-09-16 00:06:53', '2024-09-16 00:06:53'),
-(15, 'prima', '08763534782', 'prima@gmail.com', 'Belum ada', 'Jl. perjuangan1 no. 274 RT 004 RW 003', 'pendaftar', NULL, '$2y$12$nYzHZBHqmiV6kQJjvX1QQ.2o95sW8yPbU85ejhyMyIgeud1e8m0tW', '20240916080512', NULL, '2024-09-16 01:05:13', '2024-09-16 01:05:13');
+(17, 'andi', '08112236791', 'admin@gmail.com', 'Karyawan', 'Jl Siliwangi 1 No 274  RT 003 / RW004 kel. Maleber', 'Aktif', NULL, '$2y$12$e35RdLFuLrwq9AQh3Eghn.2oCQKaV96RU.j2JHKE9m78VRKlgs6wi', '1234', NULL, '2024-09-20 21:47:45', '2024-09-22 01:34:36'),
+(18, 'nina', '087652323112', 'anggota@gmail.com', 'Anggota', 'Jl. Siliwangi 1 no. 274 RT 004 RW 003', 'Aktif', NULL, '$2y$12$6wWMV.hY.sbl5AhoMiqgPO7grcnnkVUXKQiiWW9HArhdiYE9mx3IK', '20240923035330', NULL, '2024-09-23 08:53:30', '2024-09-23 08:57:57'),
+(20, 'kinda', '062811204409', 'apan@gmail.com', 'Belum ada', 'Jl. Siliwangi 1 no. 274 RT 004 RW 003', 'pendaftar', NULL, '$2y$12$QRNcH1et1BgbT2bm7zH6KeWYg9q4uk/zNwaAxtg5pFQHRqelv6Uga', '20240923035725', NULL, '2024-09-23 08:57:26', '2024-09-23 08:57:26');
 
 --
 -- Indexes for dumped tables
@@ -472,6 +492,12 @@ ALTER TABLE `contents`
 -- Indeks untuk tabel `copywrites`
 --
 ALTER TABLE `copywrites`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `cover_artists`
+--
+ALTER TABLE `cover_artists`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -540,13 +566,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `albums`
 --
 ALTER TABLE `albums`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `artis`
 --
 ALTER TABLE `artis`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT untuk tabel `banners`
@@ -573,6 +599,12 @@ ALTER TABLE `copywrites`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT untuk tabel `cover_artists`
+--
+ALTER TABLE `cover_artists`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT untuk tabel `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -588,7 +620,7 @@ ALTER TABLE `members`
 -- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT untuk tabel `personal_access_tokens`
@@ -618,7 +650,7 @@ ALTER TABLE `testimonials`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

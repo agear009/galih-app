@@ -27,7 +27,7 @@ use App\Models\CoverArtist;
 
 //Route::get('/',[IndexController::class,'index']);
 Route::get('/',[PostNewsController::class,'index']);
-Route::get('/artistpage',[CoverArtistController::class,'show']);
+//Route::get('/artistpage',[CoverArtistController::class,'show']);
 Route::get('/index',[PostNewsController::class,'index']);
 Route::get('/profile',[IndexController::class,'profile']);
 Route::get('/product',[IndexController::class,'product']);
@@ -39,6 +39,7 @@ Route::get('/register',[UserController::class,'register']);
 Route::get('/login',[LoginController::class,'index']);
 Route::post('/login-check', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
+Route::resource('/artistpage',\App\Http\Controllers\CoverArtistController::class);
 Route::resource('/members',\App\Http\Controllers\MemberController::class);
 Route::resource('/promotions',\App\Http\Controllers\LandingController::class);
 Route::resource('/registermusic',\App\Http\Controllers\RegisterController::class);
