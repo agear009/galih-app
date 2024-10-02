@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\Album;
 use App\Models\User;
 use App\Models\Artis;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -79,8 +80,9 @@ class AlbumController extends Controller
                //dd($id_member);
     //get member by id
     //$Artist=artis::findOrFail($id);
+     $Artist= DB::table('artis')->where('album', $id)->get();
     $Albums=Album::all();
-    $Artist=Artis::where('album'===$id);
+    //$Artist=Artis::where('album'==$id);
   // dd($id_member);
    // exit;
     return view('Index.AlbumPage',["title"=>"Album","active"=>"User"], compact('Artist','Albums'));

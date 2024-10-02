@@ -78,8 +78,11 @@
                                 <br>
                                 <br>
                                 <br>
-								<h5>Halo Saya</h5>
-								<h2>{{ strip_tags($artis->artist) }}</h2>
+								<h2>
+                                    <a href="{{ route('artistpage.show',$artis->id) }}" title="Lihat Lebih" class="details-link">
+                                    {{ strip_tags($artis->song) }}</a>
+                                </h2>
+								<h3>{{ strip_tags($artis->artist) }}</h3>
 								<p>{{ strip_tags($artis->tentang_artis) }}</p>
 
 							</div>
