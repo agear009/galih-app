@@ -37,4 +37,5 @@ class PostNewsController extends Controller
         return view('Admin.Index',["title"=>"Admin","active"=>"Home"]);
     }
 
+
 }

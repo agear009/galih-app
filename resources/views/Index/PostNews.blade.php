@@ -178,7 +178,7 @@
                         <h4>{{ $album->NameAlbum }}</h4>
                         <p>{{ $album->NameAlbum }}</p>
                         <a href="{{ asset('storage/albums/'.$album->cover) }}" title="{{ $album->NameAlbum }}" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                        <a href="portfolio-details.html" title="Lihat Lebih" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                        <a href="{{ route('albumpage.show',$album->id) }}" title="Lihat Lebih" class="details-link"><i class="bi bi-link-45deg"></i></a>
                         </div>
                     </div><!-- End Portfolio Item -->
                     @empty

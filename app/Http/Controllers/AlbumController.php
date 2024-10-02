@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Album;
 use App\Models\User;
+use App\Models\Artis;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -75,10 +76,14 @@ class AlbumController extends Controller
          */
         public function show($id)
         {
-            //$album=album::where('product_id','=',$id)->get();
-            $modelalbumById = new album;
-            $album=$modelalbumById->getListalbumsById($id);
-            return view('Album.Show',["title"=>"album","active"=>"album"],compact('album'));
+               //dd($id_member);
+    //get member by id
+    //$Artist=artis::findOrFail($id);
+    $Albums=Album::all();
+    $Artist=Artis::where('album'===$id);
+  // dd($id_member);
+   // exit;
+    return view('Index.AlbumPage',["title"=>"Album","active"=>"User"], compact('Artist','Albums'));
         }
 
         /**
