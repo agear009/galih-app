@@ -51,6 +51,7 @@ Route::resource('/registermusic',\App\Http\Controllers\RegisterController::class
 Route::group(["middleware"=>["auth"]],function(){
 Route::resource('/users',\App\Http\Controllers\UserController::class);
 Route::resource('/artist',\App\Http\Controllers\AgregatorController::class);
+Route::resource('/eksternal',\App\Http\Controllers\AgregatorEksternalController::class);
 Route::resource('/member',\App\Http\Controllers\AgregatorMemberController::class);
 Route::resource('/album',\App\Http\Controllers\AlbumController::class);
 Route::resource('/coverArtist',\App\Http\Controllers\CoverArtistController::class);

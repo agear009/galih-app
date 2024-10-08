@@ -79,7 +79,7 @@
                                 <br>
 								<h5>Halo Saya</h5>
 								<h2>{{ strip_tags($Artist->artist) }}</h2>
-								<p>{{ strip_tags($Artist->tentang_artis) }}</p>
+								<p>{{!! nl2br($Artist->tentang_artis) !!}}</p>
 
 							</div>
 						</div>
@@ -96,7 +96,7 @@
         			<div class="col-lg-6">
         				<div class="welcome_text">
         					<h4><p>{{ strip_tags($Artist->song) }}</p></h4><br>
-        					<p>{{ strip_tags($Artist->keterangan_lagu) }}</p>
+        					<p>{{!! nl2br($Artist->keterangan_lagu) !!}}</p>
         					<div class="row">
         						<div class="col-md-4">
         							<div class="wel_item">
@@ -135,7 +135,7 @@
         	<div class="container">
         		<div class="main_title">
         			<h2>{{ strip_tags($Artist->song) }}</h2>
-        			<p>{{ strip_tags($Artist->lirik) }}</p>
+        			<p>{{!! nl2br($Artist->lirik) !!}}</p>
         		</div>
         		<div class="feature_inner row">
         			<div class="col-lg-4 col-md-6">

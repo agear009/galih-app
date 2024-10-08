@@ -80,10 +80,10 @@
                                 <br>
 								<h2>
                                     <a href="{{ route('artistpage.show',$artis->id) }}" title="Lihat Lebih" class="details-link">
-                                    {{ strip_tags($artis->song) }}</a>
+                                    {{!! nl2br($artis->song) !!}}</a>
                                 </h2>
-								<h3>{{ strip_tags($artis->artist) }}</h3>
-								<p>{{ strip_tags($artis->tentang_artis) }}</p>
+								<h3>{{!! nl2br($artis->artist) !!}}</h3>
+								<p>{{!! nl2br($artis->tentang_artis) !!}}</p>
 
 							</div>
 						</div>

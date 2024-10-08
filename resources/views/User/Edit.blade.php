@@ -25,6 +25,7 @@
                 <option name="level_user" value="{{ $user->level_user }}">{{ $user->level_user }}</option>
                 <option name="level_user" value="Karyawan">Karyawan</option>
                 <option name="level_user" value="Anggota">Anggota</option>
+                <option name="level_user" value="Agregator">Agregator</option>
                 <option name="level_user" value="Pendaftar">Pendaftar</option>
 
             </select>

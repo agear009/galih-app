@@ -152,6 +152,57 @@
             </nav>
         </div>
 
+        @elseif(auth()->user()->level_user==="Agregator")
+
+        <div class="container">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Control Panel</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/admin" {{ ($active==="Home")?'active':'' }}>Home</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Agregator
+                        </a>
+                        <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ route('post.index') }}" {{ ($active==="Category")?'active':'' }}></a></li>
+                        <li><a class="dropdown-item" href="{{ route('eksternal.index') }}" {{ ($active==="ImageCover")?'active':'' }}>Artis</a></li>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <form action="/logout" method="POST">
+                            @csrf
+                        <li class="nav-item">  <button type="submit" class="nav-link bi bi-box-arrow-right {{ ($active==="logout")?'active':'' }}"> Logout</button></li>
+                        </form>
+                    </li>
+                </ul>
+                @if($title==="Agregator")
+                    <form class="d-flex" role="search" action="{{ route('eksternal.show',$search) }}" method="get">
+                        <input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">{{ $title }}</button>
+                    </form>
+                @else
+                    <form class="d-flex" role="search" action="/searchs" method="get">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                @endif
+
+                </div>
+            </div>
+            </nav>
+        </div>
+
 @else
 
 {{--  //jika sudah login  --}}

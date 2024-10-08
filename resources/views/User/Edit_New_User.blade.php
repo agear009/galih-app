@@ -21,11 +21,12 @@
 
             <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Level User</label>
-            <select class="form-control" id="size" name="status" aria-describedby="size" required value="{{ old('size') }}">
-                <option name="size" value="{{ $user->level_user }}">{{ $user->level_user }}</option>
-                <option name="size" value="Karyawan">Karyawan</option>
-                <option name="size" value="Anggota">Anggota</option>
-                <option name="size" value="Pendaftar">Pendaftar</option>
+            <select class="form-control" id="size" name="level_user" aria-describedby="size" required value="{{ old('size') }}">
+                <option name="level_user" value="{{ $user->level_user }}">{{ $user->level_user }}</option>
+                <option name="level_user" value="Karyawan">Karyawan</option>
+                <option name="level_user" value="Anggota">Anggota</option>
+                <option name="level_user" value="Agregator">Agregator</option>
+                <option name="level_user" value="Pendaftar">Pendaftar</option>
 
             </select>
             <input disabled type="disable" class="form-control" id="email" name="level_user" aria-describedby="emailHelp" required value="{{ $user->level_user }}">
@@ -38,13 +39,13 @@
             <div class="mb-3">
             <label for="exampleInputaddress1" class="form-label">Status</label>
             <select class="form-control" id="size" name="status" aria-describedby="size" required value="{{ old('size') }}">
-                <option name="size" value="{{ $user->status }}">{{ $user->status }}</option>
-                <option name="size" value="Aktif">Aktif</option>
-                <option name="size" value="Tidak Aktif">Tidak Aktif</option>
-                <option name="size" value="Menunggu Verifikasi">Menunggu Verifikasi</option>
-                <option name="size" value="Pengajuan Ditolak">Pengajuan Ditolak</option>
-                <option name="size" value="Pending">Pending</option>
-                <option name="size" value="Dibatalkan">Dibatalkan</option>
+                <option name="status" value="{{ $user->status }}">{{ $user->status }}</option>
+                <option name="status" value="Aktif">Aktif</option>
+                <option name="status" value="Tidak Aktif">Tidak Aktif</option>
+                <option name="status" value="Menunggu Verifikasi">Menunggu Verifikasi</option>
+                <option name="status" value="Pengajuan Ditolak">Pengajuan Ditolak</option>
+                <option name="status" value="Pending">Pending</option>
+                <option name="status" value="Dibatalkan">Dibatalkan</option>
             </select>
             <input disabled type="disable" class="form-control" id="address" name="address" aria-describedby="address" required value="{{ $user->status }}">
             </div>
