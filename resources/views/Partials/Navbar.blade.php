@@ -187,8 +187,8 @@
                     </li>
                 </ul>
                 @if($title==="Agregator")
-                    <form class="d-flex" role="search" action="{{ route('eksternal.show',$search) }}" method="get">
-                        <input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search">
+                    <form class="d-flex" role="search" action="/searchartis" method="get">
+                        <input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search" value="{{ request('search') }}">
                         <button class="btn btn-outline-success" type="submit">{{ $title }}</button>
                     </form>
                 @else

@@ -12,6 +12,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\CopywriteController;
 use App\Http\Controllers\ContentController;
+use App\Http\Controllers\SearchArtistController;
 use App\Models\CoverArtist;
 
 /*
@@ -63,6 +64,7 @@ Route::resource('/contents',\App\Http\Controllers\ContentController::class);
 Route::resource('/testimonials',\App\Http\Controllers\TestimonialController::class);
 Route::resource('/inject',\App\Http\Controllers\CopyWriteExtraController::class);
 Route::resource('/searchs',\App\Http\Controllers\SearchController::class);
+Route::resource('/searchartis',\App\Http\Controllers\SearchArtistController::class);
 Route::resource('/banners',\App\Http\Controllers\BannerController::class);
 });
 
