@@ -81,17 +81,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/user" {{ ($active==="User")?'active':'' }}>User</a>
                         </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Post
-                        </a>
-                        <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{ route('post.index') }}" {{ ($active==="Category")?'active':'' }}>Post</a></li>
-                        <li><a class="dropdown-item" href="#" {{ ($active==="ImageCover")?'active':'' }}>Image Cover</a></li>
-                        <li><a class="dropdown-item" href="#" {{ ($active==="Image")?'active':'' }}>Image</a></li>
-
-                        </ul>
-                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/user" {{ ($active==="Pendaftar")?'active':'' }}>Pendaftar</a>
+                        </li>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -166,6 +158,9 @@
                     <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/admin" {{ ($active==="Home")?'active':'' }}>Home</a>
                     </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/user" {{ ($active==="Home")?'active':'' }}>Pengajuan</a>
+                    </li>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -189,7 +184,7 @@
                 @if($title==="Agregator")
                     <form class="d-flex" role="search" action="/searchartis" method="get">
                         <input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search" value="{{ request('search') }}">
-                        <button class="btn btn-outline-success" type="submit">{{ $title }}</button>
+                        <button class="btn btn-outline-success" type="submit">Cari</button>
                     </form>
                 @else
                     <form class="d-flex" role="search" action="/searchs" method="get">

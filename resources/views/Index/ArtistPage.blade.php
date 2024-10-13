@@ -96,6 +96,7 @@
         			<div class="col-lg-6">
         				<div class="welcome_text">
         					<h4><p>{{ strip_tags($Artist->song) }}</p></h4><br>
+
         					<p>{{!! nl2br($Artist->keterangan_lagu) !!}}</p>
         					<div class="row">
         						<div class="col-md-4">
@@ -134,7 +135,13 @@
         <section class="feature_area p_120">
         	<div class="container">
         		<div class="main_title">
-        			<h2>{{ strip_tags($Artist->song) }}</h2>
+        			<h2>{{ strip_tags($Artist->song) }}</h2><br>
+                    <audio controls>
+                        <source src="{{ asset('storage/FileLagu/'.$Artist->file_lagu) }}" type="audio/ogg">
+                        <source src="{{ asset('storage/FileLagu/'.$Artist->file_lagu) }}" type="audio/mpeg">
+                        <source src="{{ asset('storage/FileLagu/'.$Artist->file_lagu) }}" type="audio/wav">
+                      Your browser does not support the audio element.
+                      </audio><br>
         			<p>{{!! nl2br($Artist->lirik) !!}}</p>
         		</div>
         		<div class="feature_inner row">

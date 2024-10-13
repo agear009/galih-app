@@ -15,6 +15,7 @@ class AgregatorEksternal extends Model
         'artist',
         'album',
         'cover_artis',
+        'file_lagu',
         'song',
         'pencipta_lagu',
         'tentang_artis',

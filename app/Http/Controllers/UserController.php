@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 // return type redirect respone
 use Illuminate\Http\RedirectResponse;
-
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -13,11 +13,33 @@ class UserController extends Controller
 {
     //
     public function Index(){
+
+        if( auth()->user()->level_user==="Karyawan"){
         $no=0;
         $no++;
+       // $status='pendaftar';
+        //$Users=user::where('status','=',$status)->get();;
         $Users=user::all();
-        $Artis=artis::all();
-        return View('User.Index',["title"=>"User","active"=>"Home"],compact('Users','no'));
+        return View('User.Index_pendaftar',["title"=>"User","active"=>"Home"],compact('Users','no'));
+        }
+
+        elseif( auth()->user()->level_user==="Agregator"){
+        $no=0;
+        $no++;
+        $status='Menunggu_Verifikasi';
+        $Users=user::where('status','=',$status,'and','id_artist','=',auth()->user()->id_artist)->get();;
+        return View('User.Index_pendaftar',["title"=>"User","active"=>"Home"],compact('Users','no'));
+
+        }
+
+        else{
+
+            $no=0;
+            $no++;
+            $Users=user::all();
+            $Artis=artis::all();
+            return View('User.Index',["title"=>"User","active"=>"Home"],compact('Users','no'));
+        }
     }
 
     public function Register(){
@@ -35,6 +57,8 @@ class UserController extends Controller
         'password' =>'required'
     ]);
 
+    $filektp=$request->file('ktp');
+    $filektp-> storeAs('public/KTP', $filektp->hashName());
         user::create([
         'name'=>$request->name,
         'phone'=>$request->phone,
@@ -43,7 +67,11 @@ class UserController extends Controller
         'address'=>$request->address,
         'status'=>$request->status,
         'password'=>$request->password,
-        'id_artist'=>$request->id_artist
+        'id_artist'=>$request->id_artist,
+        'npwp'=>$request->npwp,
+        'ktp'=>$filektp->hashName(),
+        'bank'=>$request->bank,
+        'norek'=>$request->norek
         ]);
         return redirect('/user')->with('success','Registration user successfull! ');
 
@@ -76,6 +104,17 @@ public function update(Request $request, $id): RedirectResponse
     //dd();
     $user=user::FindOrFail($id);
 
+    if($request->hasFile('ktp'))
+    {
+
+        $filektp=$request->file('ktp');
+
+        $filektp->storeAs('public/KTP',$filektp->hashName());
+
+
+
+        //delete old image
+        Storage::delete('public/KTP/'.$user->ktp);
         $user->update([
 
 
@@ -86,9 +125,34 @@ public function update(Request $request, $id): RedirectResponse
             'address'=>$request->address,
             'status'=>$request->status,
             'password'=>$request->password,
-            'id_artist'=>$request->id_artist
+            'id_artist'=>$request->id_artist,
+            'npwp'=>$request->npwp,
+            'ktp'=>$filektp->hashName(),
+            'bank'=>$request->bank,
+            'norek'=>$request->norek
             ]);
             return redirect('/user')->with('success','Registration successfull! ');
+    }
+
+    else {
+        $user->update([
+        'name'=>$request->name,
+            'phone'=>$request->phone,
+            'email'=>$request->email,
+            'level_user'=>$request->level_user,
+            'address'=>$request->address,
+            'status'=>$request->status,
+            'password'=>$request->password,
+            'id_artist'=>$request->id_artist,
+            'npwp'=>$request->npwp,
+            'bank'=>$request->bank,
+            'norek'=>$request->norek
+            ]);
+            return redirect('/user')->with('success','Registration successfull! ');
+
+    }
+
+
 
 
 }
@@ -99,7 +163,7 @@ public function destroy($id): RedirectResponse
         $user=user::findOrFail($id);
 
         //delete image
-
+        Storage::delete('public/KTP/'. $user->ktp);
 
 
         // delete member

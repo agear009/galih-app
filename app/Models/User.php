@@ -26,6 +26,10 @@ class User extends Authenticatable
         'status',
         'password',
         'id_artist',
+        'npwp',
+        'ktp',
+        'bank',
+        'norek',
     ];
 
     /**

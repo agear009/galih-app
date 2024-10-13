@@ -43,8 +43,8 @@
                 <option name="size" value="{{ $artist->status }}">{{ $artist->status }}</option>
                 <option name="size" value="Aktif">Aktif</option>
                 <option name="size" value="Tidak Aktif">Tidak Aktif</option>
-                <option name="size" value="Menunggu Verifikasi">Menunggu Verifikasi</option>
-                <option name="size" value="Pengajuan Ditolak">Pengajuan Ditolak</option>
+                <option name="size" value="Menunggu_Verifikasi">Menunggu Verifikasi</option>
+                <option name="size" value="Pengajuan_Ditolak">Pengajuan Ditolak</option>
                 <option name="size" value="Pending">Pending</option>
                 <option name="size" value="Dibatalkan">Dibatalkan</option>
             </select>

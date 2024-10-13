@@ -37,6 +37,9 @@ class RegisterController extends Controller
         'address' =>'required'
     ]);
 
+    $filektp=$request->file('ktp');
+    $filektp-> storeAs('public/KTP', $filektp->hashName());
+
         user::create([
         'name'=>$request->name,
         'phone'=>$request->phone,
@@ -46,6 +49,10 @@ class RegisterController extends Controller
         'status'=>$request->status,
         'password'=>'12345678',
         'id_artist'=>$code,
+        'npwp'=>$request->status,
+        'ktp'=>$filektp->hashName(),
+        'bank'=>$request->bank,
+        'norek'=>$request->norek,
 
 
 
@@ -57,7 +64,10 @@ class RegisterController extends Controller
             'album'=>'belum terdapat album',
             'cover_artis'=>'belum ada cover',
             'song'=>$request->song,
+            'file_lagu'=>'belum ada file musik yang di upload',
             'pencipta_lagu'=>'belum terdapat pencipta_lagu',
+            'jenis_musik'=>$request->jenis_musik,
+            'kontrak'=>now(),
             'tentang_artis'=>'belum terdapat tentang_artis',
             'lirik'=>'belum terdapat lirik',
             'keterangan_lagu'=>'belum terdapat keterangan_lagu',

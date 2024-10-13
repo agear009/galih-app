@@ -16,13 +16,13 @@ class Album extends Model
 
     ];
 
-    public function getListArtis()
+    public function getListAlbum()
     {
-        $listArtis = DB::table('artis')
-                                ->join('users','artis.id_user','=','users.id_artist')
-                                ->select('artis.*','users.id AS id_users')
+        $listAlbum = DB::table('albums')
+                                ->join('users','albums.id_user','=','users.id_artist')
+                                ->select('albums.*','users.id_artist AS id_user')
                                 ->get();
-                                return $listArtis;
+                                return $listAlbum;
                             }
 }
 

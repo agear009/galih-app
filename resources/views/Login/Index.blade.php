@@ -128,7 +128,7 @@
     <div class="row justify-content-center mt-4 mb-5">
         <div class="col-md-4 mt-5">
     <main class="form-signin w-100 m-auto">
-        <h1 class="h3 mb-3 fw-normal text-center">Please Login!</h1>
+        <h1 class="h3 mb-3 fw-normal text-center">Silahkan  Login!</h1>
 
       <form action="login-check" method="POST">
          @csrf
@@ -150,7 +150,7 @@
         <button class="btn btn-primary w-100 py-2" type="submit">Login</button>
 
       </form>
-      <small class="d-block text-center mt-3">Not registerd ? <a href="/register">Register Now!</a></small>
+      <small class="d-block text-center mt-3">Belum daftar ? <a href="/">Daftar sekarang!</a></small>
     </main>
 <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
         </div>

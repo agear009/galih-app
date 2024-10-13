@@ -9,7 +9,7 @@ is the file you need to edit to change the look of the
 theme.
 ---------------------------------------------------- */
 /*=====================================================================
-@Template Name: HostHub Construction 
+@Template Name: HostHub Construction
 @Author: Rocky Ahmed
 @Developed By: Rocky Ahmed
 @Developer URL: http://rocky.wethemez.com
@@ -26,14 +26,14 @@ Table of Content:
 06/ breadcrumb
 07/ about
 08/ team
-09/ project 
-10/ price 
-11/ team 
-12/ blog 
-13/ video  
-14/ features  
-15/ career  
-16/ contact 
+09/ project
+10/ price
+11/ team
+12/ blog
+13/ video
+14/ features
+15/ career
+16/ contact
 17/ footer
 
 =====================================================================*/
@@ -678,13 +678,13 @@ button:focus {
     z-index: 0;
     background: #8490ff; }
     .blog_right_sidebar .search_widget .input-group .form-control.placeholder {
-      color: #fff; }
+      color: #5c5454; }
     .blog_right_sidebar .search_widget .input-group .form-control:-moz-placeholder {
-      color: #fff; }
+      color: #5a5353; }
     .blog_right_sidebar .search_widget .input-group .form-control::-moz-placeholder {
-      color: #fff; }
+      color: #645f5f; }
     .blog_right_sidebar .search_widget .input-group .form-control::-webkit-input-placeholder {
-      color: #fff; }
+      color: #5c5353; }
     .blog_right_sidebar .search_widget .input-group .form-control:focus {
       box-shadow: none; }
   .blog_right_sidebar .search_widget .input-group .btn-default {
@@ -776,13 +776,13 @@ button:focus {
       border-left: 0px;
       border-radius: 0px; }
       .blog_right_sidebar .newsletter_widget .form-control.placeholder {
-        color: #cccccc; }
+        color: #6b6464; }
       .blog_right_sidebar .newsletter_widget .form-control:-moz-placeholder {
-        color: #cccccc; }
+        color: #5e5656; }
       .blog_right_sidebar .newsletter_widget .form-control::-moz-placeholder {
-        color: #cccccc; }
+        color: #685c5c; }
       .blog_right_sidebar .newsletter_widget .form-control::-webkit-input-placeholder {
-        color: #cccccc; }
+        color: #5c5454; }
       .blog_right_sidebar .newsletter_widget .form-control:focus {
         outline: none;
         box-shadow: none; }
@@ -1036,19 +1036,19 @@ button:focus {
   .comment-form ::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
     font-size: 13px;
-    color: #777; }
+    color: #424040; }
   .comment-form ::-moz-placeholder {
     /* Firefox 19+ */
     font-size: 13px;
-    color: #777; }
+    color: #333131; }
   .comment-form :-ms-input-placeholder {
     /* IE 10+ */
     font-size: 13px;
-    color: #777; }
+    color: #3f3a3a; }
   .comment-form :-moz-placeholder {
     /* Firefox 18- */
     font-size: 13px;
-    color: #777; }
+    color: #464444; }
 
 /*============ End Blog Single Styles  =============*/
 /*---------------------------------------------------- */
@@ -1133,27 +1133,27 @@ button:focus {
   font-size: 13px;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
-  color: #999999; }
+  color: #504d4d; }
   .reservation_form .form-group input.placeholder {
     font-size: 13px;
     font-family: "Roboto", sans-serif;
     font-weight: 300;
-    color: #999999; }
+    color: #474545; }
   .reservation_form .form-group input:-moz-placeholder {
     font-size: 13px;
     font-family: "Roboto", sans-serif;
     font-weight: 300;
-    color: #999999; }
+    color: #464141; }
   .reservation_form .form-group input::-moz-placeholder {
     font-size: 13px;
     font-family: "Roboto", sans-serif;
     font-weight: 300;
-    color: #999999; }
+    color: #4d4646; }
   .reservation_form .form-group input::-webkit-input-placeholder {
     font-size: 13px;
     font-family: "Roboto", sans-serif;
     font-weight: 300;
-    color: #999999; }
+    color: #5c5656; }
 .reservation_form .form-group .res_select {
   height: 40px;
   border: 1px solid #eeeeee;
@@ -1224,13 +1224,13 @@ button:focus {
       box-shadow: none;
       outline: none; }
     .contact_form .form-group .form-control.placeholder {
-      color: #999; }
+      color: #3a3737; }
     .contact_form .form-group .form-control:-moz-placeholder {
-      color: #999; }
+      color: #524b4b; }
     .contact_form .form-group .form-control::-moz-placeholder {
-      color: #999; }
+      color: #555050; }
     .contact_form .form-group .form-control::-webkit-input-placeholder {
-      color: #999; }
+      color: #494343; }
   .contact_form .form-group textarea {
     resize: none; }
     .contact_form .form-group textarea.form-control {
@@ -3028,22 +3028,22 @@ h6 {
       font-size: 14px;
       font-family: "Roboto", sans-serif;
       font-weight: normal;
-      color: #cccccc; }
+      color: #464141; }
     .news_widget .input-group input:-moz-placeholder {
       font-size: 14px;
       font-family: "Roboto", sans-serif;
       font-weight: normal;
-      color: #cccccc; }
+      color: #504848; }
     .news_widget .input-group input::-moz-placeholder {
       font-size: 14px;
       font-family: "Roboto", sans-serif;
       font-weight: normal;
-      color: #cccccc; }
+      color: #5c5757; }
     .news_widget .input-group input::-webkit-input-placeholder {
       font-size: 14px;
       font-family: "Roboto", sans-serif;
       font-weight: normal;
-      color: #cccccc; }
+      color: #3a3737; }
   .news_widget .input-group .sub-btn {
     border-radius: 0px;
     background-image: -moz-linear-gradient(0deg, #8490ff 0%, #62bdfc 100%);

@@ -21,13 +21,30 @@ class AlbumController extends Controller
          */
         public function index()
         {
+
+            if( auth()->user()->level_user==="Anggota"){
+
+                $album = new Album;
+                $Album=$album->getListAlbum();
+                $no=0;
+                $no++;
+                //$album=album::all();
+                $modelalbum = new album;
+                //$album=$modelalbum->getListalbums();
+
+                return View('Album.Index',["title"=>"Album","active"=>"Album"],compact('Album','no'));
+
+            }
+            else{
             $no=0;
             $no++;
             //$album=album::all();
             $modelalbum = new album;
             //$album=$modelalbum->getListalbums();
             $Album=album::all();
-            return View('Album.Index',["title"=>"Album","active"=>"Album"],compact('Album','no'));
+            return View('Album.Index',["title"=>"Album","active"=>"Album"],compact('Album','no'));}
+
+
         }
 
         /**

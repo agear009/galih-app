@@ -30,8 +30,10 @@ class AgregatorMemberController extends Controller
     public function create(Request $id_users):view
     {
         //$userst=user::FindOrFail(auth()->user()->id)->get();
+        $album = new Album;
+        $Albums=$album->getListAlbum();
+
         $users=user::all();
-        $Albums=Album::all();
         $userst=user::where('id_artist','=', auth()->user()->id_artist)->get();
         return View('AgregatorMember.Create',["title"=>"Creat Artist","active"=>"Home"], compact('userst','users','Albums'));
 
@@ -51,13 +53,19 @@ class AgregatorMemberController extends Controller
         $cover=$request->file('cover_artis');
         $cover-> storeAs('public/CoverArtists', $cover->hashName());
 
+        $filelagu=$request->file('file_lagu');
+        $filelagu-> storeAs('public/FileLagu', $filelagu->hashName());
+
         artis::create([
             'id_user'=>$request->id_user,
             'artist'=>$request->artist,
             'album'=>$request->album,
             'cover_artis'=>$cover->hashName(),
+            'file_lagu'=>$filelagu->hashName(),
+            'jenis_musik'=>$request->jenis_musik,
             'song'=>$request->song,
             'pencipta_lagu'=>$request->pencipta_lagu,
+            'kontrak'=>'dd/mm/yyyy',
             'tentang_artis'=>$request->tentang_artis,
             'lirik'=>$request->lirik,
             'keterangan_lagu'=>$request->keterangan_lagu,
@@ -114,6 +122,7 @@ public function update(Request $request, $id): RedirectResponse
         $cover->storeAs('public/CoverArtists',$cover->hashName());
 
 
+
         //delete old image
         Storage::delete('public/CoverArtists/'.$artis->cover_artis);
 
@@ -123,6 +132,7 @@ public function update(Request $request, $id): RedirectResponse
             'artist'=>$request->artist,
             'album'=>$request->album,
             'cover_artis'=>$cover->hashName(),
+            'file_lagu'=>$request->file_lagu,
             'song'=>$request->song,
             'pencipta_lagu'=>$request->pencipta_lagu,
             'tentang_artis'=>$request->tentang_artis,
@@ -148,6 +158,7 @@ public function update(Request $request, $id): RedirectResponse
             'id_user'=>$request->id_user,
             'artist'=>$request->artist,
             'album'=>$request->album,
+            'file_lagu'=>$request->file_lagu,
             'song'=>$request->song,
             'pencipta_lagu'=>$request->pencipta_lagu,
             'tentang_artis'=>$request->tentang_artis,
@@ -178,6 +189,7 @@ public function destroy($id): RedirectResponse
 
         //delete image
         Storage::delete('public/CoverArtists/'. $artist->cover_artis);
+        Storage::delete('public/FileLagu/'. $artist->file_lagu);
 
 
         // delete member

@@ -43,6 +43,33 @@
                 <label for="exampleInputEmail1" class="form-label">Cover Lagu atau artis</label>
                 <input type="file" class="form-control" id="email" name="cover_artis" aria-describedby="emailHelp" required >
                 </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">File Lagu</label>
+                    <input type="file" class="form-control" id="email" name="file_lagu" aria-describedby="emailHelp" required >
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Jenis Musik</label>
+                        <select class="form-control" id="level_user" name="jenis_musik" required>
+                            <option class="form-control" id="level_user" name="jenis_musik" value="" >-- Pilih Jenis Musik anda --</option>
+                            <option class="form-control" id="level_user" name="jenis_musik" value="Klasik">Musik Klasik</option>
+                            <option class="form-control" id="level_user" name="jenis_musik" value="Jazz">Musik Jazz</option>
+                            <option class="form-control" id="level_user" name="jenis_musik" value="Blues">Musik Blues</option>
+                            <option class="form-control" id="level_user" name="jenis_musik" value="Country">Musik Country</option>
+                            <option class="form-control" id="level_user" name="jenis_musik" value="Techno">Musik Techno</option>
+                            <option class="form-control" id="level_user" name="jenis_musik" value="Reggae">Musik Reggae</option>
+                            <option class="form-control" id="level_user" name="jenis_musik" value="R&B">Musik R&B</option>
+                            <option class="form-control" id="level_user" name="jenis_musik" value="Rap">Musik Rap</option>
+                            <option class="form-control" id="level_user" name="jenis_musik" value="Death Metal">Musik Death Metal</option>
+                            <option class="form-control" id="level_user" name="jenis_musik" value="Dangdut">Musik Dangdut</option>
+                            <option class="form-control" id="level_user" name="jenis_musik" value="Pop">Musik Pop</option>
+                            <option class="form-control" id="level_user" name="jenis_musik" value="Balada">Musik Balada</option>
+                            <option class="form-control" id="level_user" name="jenis_musik" value="Pop Rock">Musik Pop Rock</option>
+                            <option class="form-control" id="level_user" name="jenis_musik" value="Religi">Musik Religi</option>
+                        </select>
+
+                        </div>
+
             <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Lagu</label>
             <input type="text" class="form-control" id="email" name="song" aria-describedby="emailHelp" required >
@@ -52,17 +79,22 @@
             <input type="text" class="form-control" id="email" name="pencipta_lagu" aria-describedby="emailHelp" required >
             </div>
             <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Lama Kontrak </label>
+            <input type="date" class="form-control" id="email" name="kontrak" aria-describedby="emailHelp" required >
+            </div>
+
+            <div class="mb-3">
                 <label for="exampleInputname1" class="form-label">Tentang Artis</label>
-                <textarea id="myTextarea" name="tentang_artis"></textarea>
+                <textarea id="myTextarea" name="tentang_artis">-</textarea>
             </div>
             <div class="mb-3">
                 <label for="exampleInputname1" class="form-label">Lirik dan kunci gitar</label>
-                <textarea id="myTextarea" name="lirik"></textarea>
+                <textarea id="myTextarea" name="lirik">-</textarea>
             </div>
 
             <div class="mb-3">
                 <label for="exampleInputname1" class="form-label">Keterangan Lagu</label>
-                <textarea id="myTextarea" name="keterangan_lagu"></textarea>
+                <textarea id="myTextarea" name="keterangan_lagu">-</textarea>
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Link Facebook</label>

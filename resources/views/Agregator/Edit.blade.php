@@ -40,9 +40,48 @@
                 <input type="text" class="form-control" id="email" name="song" aria-describedby="emailHelp" required value="{{ $Artist->song }}">
                 </div>
                 <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Lagu</label><br>
+                <audio controls>
+                    <source src="{{ asset('storage/FileLagu/'.$Artist->file_lagu) }}" type="audio/ogg">
+                    <source src="{{ asset('storage/FileLagu/'.$Artist->file_lagu) }}" type="audio/mpeg">
+                    <source src="{{ asset('storage/FileLagu/'.$Artist->file_lagu) }}" type="audio/wav">
+                  Your browser does not support the audio element.
+                  </audio>
+                  <input type="file" class="form-control" id="email" name="file_lagu" aria-describedby="emailHelp">
+
+                </div>
+                <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Pencipta Lagu</label>
                 <input type="text" class="form-control" id="email" name="pencipta_lagu" aria-describedby="emailHelp" required value="{{ $Artist->pencipta_lagu }}">
                 </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Jenis Musik</label>
+                    <select class="form-control" id="level_user" name="jenis_musik" required>
+                        <option class="form-control" id="level_user" name="jenis_musik" value="{{ $Artist->jenis_musik }}" >{{ $Artist->jenis_musik }}</option>
+                        <option class="form-control" id="level_user" name="jenis_musik" value="Klasik">Musik Klasik</option>
+                        <option class="form-control" id="level_user" name="jenis_musik" value="Jazz">Musik Jazz</option>
+                        <option class="form-control" id="level_user" name="jenis_musik" value="Blues">Musik Blues</option>
+                        <option class="form-control" id="level_user" name="jenis_musik" value="Country">Musik Country</option>
+                        <option class="form-control" id="level_user" name="jenis_musik" value="Techno">Musik Techno</option>
+                        <option class="form-control" id="level_user" name="jenis_musik" value="Reggae">Musik Reggae</option>
+                        <option class="form-control" id="level_user" name="jenis_musik" value="R&B">Musik R&B</option>
+                        <option class="form-control" id="level_user" name="jenis_musik" value="Rap">Musik Rap</option>
+                        <option class="form-control" id="level_user" name="jenis_musik" value="Death Metal">Musik Death Metal</option>
+                        <option class="form-control" id="level_user" name="jenis_musik" value="Dangdut">Musik Dangdut</option>
+                        <option class="form-control" id="level_user" name="jenis_musik" value="Pop">Musik Pop</option>
+                        <option class="form-control" id="level_user" name="jenis_musik" value="Balada">Musik Balada</option>
+                        <option class="form-control" id="level_user" name="jenis_musik" value="Pop Rock">Musik Pop Rock</option>
+                        <option class="form-control" id="level_user" name="jenis_musik" value="Religi">Musik Religi</option>
+                    </select>
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Lama Kontrak </label>
+                        <input type="date" class="form-control" id="email" name="kontrak" aria-describedby="emailHelp" value="{{ $Artist->kontrak }}"  required >
+                        </div>
+
                 <div class="mb-3">
                     <label for="exampleInputname1" class="form-label">Tentang Artis</label>
                     <textarea id="myTextarea" name="tentang_artis">{{ $Artist->tentang_artis }}</textarea>

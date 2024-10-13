@@ -27,6 +27,7 @@
             <input type="text" class="form-control" id="phone" name="nameAlbum" aria-describedby="phone" required value="{{  $album->nameAlbum  }}" >
             </div>
             <div class="mb-3">
+                <img src="{{ asset('storage/albums/'.$album->cover) }}" class="img-fluid" alt="" height="20%" width="20%">
             <label for="exampleInputEmail1" class="form-label">Gambar Album</label>
             <input type="file" class="form-control" id="email" name="cover" aria-describedby="emailHelp" value="{{  $album->cover }}">
             </div>
