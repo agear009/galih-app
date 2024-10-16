@@ -20,7 +20,8 @@
                 <div class="mb-3">
                 <label for="exampleInputphone1" class="form-label">Album</label>
                 <select type="text" class="form-control @error('category') is-invalid @enderror" id="floatingCategory" placeholder="Category" name="album" required>
-                    <option name="id_user" value="{{ $Artist->album }}">{{ $Artist->album }}</option>
+                    <option name="album" value="{{ $Artist->album }}">{{ $Artist->album }}</option>
+                    <option name="album" value="Single">Single</option>
                     @forelse($Albums as $album)
                     <option name="album" value="{{ $album->id }}">{{  $album->nameAlbum }}</option>
                     @empty
@@ -36,7 +37,7 @@
                     <input type="file" class="form-control" id="email" name="cover_artis" aria-describedby="emailHelp" >
                     </div>
                 <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Lagu</label>
+                <label for="exampleInputEmail1" class="form-label">Judul Lagu</label>
                 <input type="text" class="form-control" id="email" name="song" aria-describedby="emailHelp" required value="{{ $Artist->song }}">
                 </div>
                 <div class="mb-3">

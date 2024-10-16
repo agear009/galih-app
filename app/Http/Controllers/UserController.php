@@ -15,20 +15,29 @@ class UserController extends Controller
     public function Index(){
 
         if( auth()->user()->level_user==="Karyawan"){
-        $no=0;
-        $no++;
-       // $status='pendaftar';
-        //$Users=user::where('status','=',$status)->get();;
-        $Users=user::all();
-        return View('User.Index_pendaftar',["title"=>"User","active"=>"Home"],compact('Users','no'));
+
+            $level_user='Anggota';
+            $Users=user::where('level_user','=',$level_user)->get();
+            $no=0;
+            $no++;
+            //$Users=user::all();
+            $Artis=artis::all();
+            return View('User.Index_pendaftar',["title"=>"User","active"=>"Home"],compact('Users','no','Artis'));
+            //return View('User.Index',["title"=>"User","active"=>"Home"],compact('Users','no'));
+
+
         }
 
         elseif( auth()->user()->level_user==="Agregator"){
         $no=0;
         $no++;
         $status='Menunggu_Verifikasi';
-        $Users=user::where('status','=',$status,'and','id_artist','=',auth()->user()->id_artist)->get();;
-        return View('User.Index_pendaftar',["title"=>"User","active"=>"Home"],compact('Users','no'));
+        $artis = new Artis;
+        $Artis=$artis->getListArtis();
+
+        $Users=user::where('status','=',$status,'and','id_artist','=',auth()->user()->id_artist)->get();
+        //$Artist=artis::where('id_user','=', auth()->user()->id_artist)->get();
+        return View('User.Index_pendaftar_eksternal',["title"=>"User","active"=>"Home"],compact('Users','no','Artis'));
 
         }
 
@@ -36,7 +45,10 @@ class UserController extends Controller
 
             $no=0;
             $no++;
+           // $status='pendaftar';
+            //$Users=user::where('status','=',$status)->get();;
             $Users=user::all();
+
             $Artis=artis::all();
             return View('User.Index',["title"=>"User","active"=>"Home"],compact('Users','no'));
         }

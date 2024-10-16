@@ -65,7 +65,7 @@ class AgregatorMemberController extends Controller
             'jenis_musik'=>$request->jenis_musik,
             'song'=>$request->song,
             'pencipta_lagu'=>$request->pencipta_lagu,
-            'kontrak'=>'dd/mm/yyyy',
+            'kontrak'=>'00/00/0000',
             'tentang_artis'=>$request->tentang_artis,
             'lirik'=>$request->lirik,
             'keterangan_lagu'=>$request->keterangan_lagu,
@@ -114,17 +114,19 @@ public function update(Request $request, $id): RedirectResponse
     //get member by id
     $artis=artis::FindOrFail($id);
 
-    if($request->hasFile('cover_artis'))
+    if($request->hasFile('cover_artis') and $request->hasFile('file_lagu') )
     {
         //upload new image
         $cover=$request->file('cover_artis');
-
         $cover->storeAs('public/CoverArtists',$cover->hashName());
 
+        $filelagu=$request->file('file_lagu');
+        $filelagu-> storeAs('public/FileLagu', $filelagu->hashName());
 
 
         //delete old image
         Storage::delete('public/CoverArtists/'.$artis->cover_artis);
+        Storage::delete('public/FileLagu/'. $artis->file_lagu);
 
         //update album with new image
         $artis->update([
@@ -132,11 +134,13 @@ public function update(Request $request, $id): RedirectResponse
             'artist'=>$request->artist,
             'album'=>$request->album,
             'cover_artis'=>$cover->hashName(),
-            'file_lagu'=>$request->file_lagu,
+            'file_lagu'=>$filelagu->hashName(),
             'song'=>$request->song,
+            'jenis_musik'=>$request->jenis_musik,
             'pencipta_lagu'=>$request->pencipta_lagu,
             'tentang_artis'=>$request->tentang_artis,
             'lirik'=>$request->lirik,
+            'kontrak'=>$request->kontrak,
             'keterangan_lagu'=>$request->keterangan_lagu,
             'facebook'=>$request->facebook,
             'x'=>$request->x,
@@ -152,17 +156,87 @@ public function update(Request $request, $id): RedirectResponse
 
     }
 
+    elseif($request->hasFile('cover_artis'))
+    {
+         //upload new image
+         $cover=$request->file('cover_artis');
+         $cover->storeAs('public/CoverArtists',$cover->hashName());
+         //delete old image
+         Storage::delete('public/CoverArtists/'.$artis->cover_artis);
+
+
+
+        $artis->update([
+            'id_user'=>$request->id_user,
+            'artist'=>$request->artist,
+            'album'=>$request->album,
+            'cover_artis'=>$cover->hashName(),
+            'jenis_musik'=>$request->jenis_musik,
+            'song'=>$request->song,
+            'pencipta_lagu'=>$request->pencipta_lagu,
+            'tentang_artis'=>$request->tentang_artis,
+            'lirik'=>$request->lirik,
+            'kontrak'=>$request->kontrak,
+            'keterangan_lagu'=>$request->keterangan_lagu,
+            'facebook'=>$request->facebook,
+            'x'=>$request->x,
+            'youtube'=>$request->youtube,
+            'instagram'=>$request->instagram,
+            'apple'=>$request->apple,
+            'spotify'=>$request->spotify,
+            'tiktok'=>$request->tiktok,
+            'joox'=>$request->joox,
+            'tidal'=>$request->tidal
+
+        ]);
+
+    }
+    elseif($request->hasFile('file_lagu'))
+    {
+         //upload new image
+         $cover=$request->file('file_lagu');
+         $cover->storeAs('public/FileLagu',$cover->hashName());
+         //delete old image
+         Storage::delete('public/FileLagu/'.$artis->file_lagu);
+
+
+
+        $artis->update([
+            'id_user'=>$request->id_user,
+            'artist'=>$request->artist,
+            'album'=>$request->album,
+            'file_lagu'=>$cover->hashName(),
+            'jenis_musik'=>$request->jenis_musik,
+            'song'=>$request->song,
+            'pencipta_lagu'=>$request->pencipta_lagu,
+            'tentang_artis'=>$request->tentang_artis,
+            'lirik'=>$request->lirik,
+            'kontrak'=>$request->kontrak,
+            'keterangan_lagu'=>$request->keterangan_lagu,
+            'facebook'=>$request->facebook,
+            'x'=>$request->x,
+            'youtube'=>$request->youtube,
+            'instagram'=>$request->instagram,
+            'apple'=>$request->apple,
+            'spotify'=>$request->spotify,
+            'tiktok'=>$request->tiktok,
+            'joox'=>$request->joox,
+            'tidal'=>$request->tidal
+
+        ]);
+
+    }
     else
     {
         $artis->update([
             'id_user'=>$request->id_user,
             'artist'=>$request->artist,
-            'album'=>$request->album,
-            'file_lagu'=>$request->file_lagu,
+            'jenis_musik'=>$request->jenis_musik,
             'song'=>$request->song,
             'pencipta_lagu'=>$request->pencipta_lagu,
             'tentang_artis'=>$request->tentang_artis,
             'lirik'=>$request->lirik,
+            'kontrak'=>$request->kontrak,
             'keterangan_lagu'=>$request->keterangan_lagu,
             'facebook'=>$request->facebook,
             'x'=>$request->x,

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
@@ -32,6 +33,14 @@ class User extends Authenticatable
         'norek',
     ];
 
+    public function getListArtis()
+    {
+        $listArtis = DB::table('users')
+                                ->join('artis','users.id_artist','=','artis.id_user')
+                                ->select('users.*','artis.id AS id_artis')
+                                ->get();
+                                return $listArtis;
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

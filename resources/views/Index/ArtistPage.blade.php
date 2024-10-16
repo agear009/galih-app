@@ -137,6 +137,7 @@
         		<div class="main_title">
         			<h2>{{ strip_tags($Artist->song) }}</h2><br>
                     <audio controls>
+
                         <source src="{{ asset('storage/FileLagu/'.$Artist->file_lagu) }}" type="audio/ogg">
                         <source src="{{ asset('storage/FileLagu/'.$Artist->file_lagu) }}" type="audio/mpeg">
                         <source src="{{ asset('storage/FileLagu/'.$Artist->file_lagu) }}" type="audio/wav">
