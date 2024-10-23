@@ -96,6 +96,8 @@
         			<div class="col-lg-6">
         				<div class="welcome_text">
         					<h4><p>{{ strip_tags($Artist->song) }}</p></h4><br>
+							<iframe width="420" height="315" src="{{ $Artist->youtube }}">
+							</iframe>
 
         					<p>{{!! nl2br($Artist->keterangan_lagu) !!}}</p>
         					<div class="row">
