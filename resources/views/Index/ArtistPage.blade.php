@@ -78,8 +78,8 @@
                                 <br>
                                 <br>
 								<h5>Halo Saya</h5>
-								<h2>{{ strip_tags($Artist->artist) }}</h2>
-								<p>{{!! nl2br($Artist->tentang_artis) !!}}</p>
+								<h2>{{ nl2br(strip_tags($Artist->artist)) }}</h2>
+								<p>{{ nl2br(strip_tags($Artist->tentang_artis)) }}</p>
 
 							</div>
 						</div>
@@ -95,11 +95,12 @@
         		<div class="row welcome_inner">
         			<div class="col-lg-6">
         				<div class="welcome_text">
-        					<h4><p>{{ strip_tags($Artist->song) }}</p></h4><br>
+        					<h4><p>{{ nl2br(strip_tags($Artist->song)) }}</p></h4><br>
+
 							<iframe width="420" height="315" src="{{ $Artist->youtube }}">
 							</iframe>
 
-        					<p>{{!! nl2br($Artist->keterangan_lagu) !!}}</p>
+        					<p>{{ nl2br(strip_tags($Artist->keterangan_lagu)) }}</p>
         					<div class="row">
         						<div class="col-md-4">
         							<div class="wel_item">
@@ -137,7 +138,7 @@
         <section class="feature_area p_120">
         	<div class="container">
         		<div class="main_title">
-        			<h2>{{ strip_tags($Artist->song) }}</h2><br>
+        			<h2>{{ nl2br(strip_tags($Artist->song)) }}</h2><br>
                     <audio controls>
 
                         <source src="{{ asset('storage/FileLagu/'.$Artist->file_lagu) }}" type="audio/ogg">
@@ -145,7 +146,7 @@
                         <source src="{{ asset('storage/FileLagu/'.$Artist->file_lagu) }}" type="audio/wav">
                       Your browser does not support the audio element.
                       </audio><br>
-        			<p>{{!! nl2br($Artist->lirik) !!}}</p>
+        			<p>{{ nl2br(strip_tags($Artist->lirik)) }}</p>
         		</div>
         		<div class="feature_inner row">
         			<div class="col-lg-4 col-md-6">
@@ -212,7 +213,7 @@
         			<div class="col-lg-5 col-sm-6">
         				<aside class="f_widget news_widget">
         					<div class="f_title">
-        						<h3>{{ strip_tags($Artist->pencipta_lagu) }}</h3>
+        						<h3>{{ nl2br(strip_tags($Artist->pencipta_lagu)) }}</h3>
         					</div>
         					<p>Pencipta Lagu</p>
 

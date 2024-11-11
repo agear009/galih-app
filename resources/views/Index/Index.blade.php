@@ -311,6 +311,43 @@
 				<div class="experience-content">
 						<div class="main-timeline">
 							<ul>
+                                <li>
+									<div class="single-timeline-box fix">
+										<div class="row">
+											<div class="col-md-offset-1 col-md-5 experience-time-responsive">
+												<div class="experience-time">
+													<h2>
+														<span><i class="fa fa-circle" aria-hidden="true"></i></span>
+														2024 - Present
+													</h2>
+													<h3>Web development</h3>
+												</div><!--/.experience-time-->
+											</div><!--/.col-->
+											<div class="col-md-5">
+												<div class="timeline">
+													<div class="timeline-content text-right">
+														<h4 class="title">
+															PT SAAMPARAN DIGITAL GRUP
+														</h4>
+														<h5>CIAMIS</h5>
+														<p class="description">
+															create a company profile website and information system that will be developed further.
+														</p>
+													</div><!--/.timeline-content-->
+												</div><!--/.timeline-->
+											</div><!--/.col-->
+											<div class="col-md-offset-1 col-md-5 experience-time-main">
+												<div class="experience-time">
+													<h2>
+														<span><i class="fa fa-circle" aria-hidden="true"></i></span>
+														2024 - Present
+													</h2>
+													<h3>Web development</h3>
+												</div><!--/.experience-time-->
+											</div><!--/.col-->
+										</div>
+									</div><!--/.single-timeline-box-->
+								</li>
 								<li>
 									<div class="single-timeline-box fix">
 										<div class="row">
